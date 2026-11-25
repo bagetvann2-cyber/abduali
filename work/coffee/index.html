@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ember: обжарка кофе в Алматы</title>
-<meta name="description" content="Обжариваем по вторникам и пятницам, доставка по Алматы на следующий день. Профиль обжарки каждого лота, подписка от 5 500 ₸.">
+<meta name="description" content="Обжариваем каждый вторник и пятницу, доставка по Алматы на следующий день. Профиль обжарки каждого лота, подписка от 5 500 ₸.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geologica:wght@400;600;700&family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geologica:wght@400;600;800&family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
   --drum:#15171a;      /* графит барабана */
@@ -20,95 +20,136 @@
   --head:'Geologica','Segoe UI',sans-serif;
   --body:'IBM Plex Sans','Segoe UI',sans-serif;
   --mono:'IBM Plex Mono',Consolas,monospace;
+  --grain:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
 }
 *{box-sizing:border-box}
+html,body{overflow-x:clip}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--drum);color:var(--ink);font:400 16px/1.55 var(--body);-webkit-font-smoothing:antialiased}
 a{color:inherit}
 :focus-visible{outline:2px solid var(--signal);outline-offset:3px}
-.wrap{max-width:1400px;margin:0 auto;padding:0 32px}
-h1,h2,h3{font-family:var(--head);margin:0;letter-spacing:-.01em}
-h2{font-size:clamp(26px,3vw,36px);font-weight:600;line-height:1.15}
+.wrap{max-width:1600px;margin:0 auto;padding:0 48px}
+h1,h2,h3{font-family:var(--head);margin:0}
+h2{font-size:clamp(38px,5.4vw,88px);font-weight:800;line-height:1.02;letter-spacing:-.035em}
 p{margin:0}
-.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;border:0;border-radius:3px;background:var(--signal);color:var(--signal-ink);font:600 16px var(--body);cursor:pointer;text-decoration:none}
+.ln-mask{padding-bottom:.14em;margin-bottom:-.14em}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 26px;border:0;border-radius:3px;background:var(--signal);color:var(--signal-ink);font:600 16px var(--body);cursor:pointer;text-decoration:none}
 .btn:hover{background:#ff6c4e}
 .btn.ghost{background:none;color:var(--ink);border:1px solid var(--line)}
 .btn.ghost:hover{border-color:var(--mute);background:none}
+.grain{position:absolute;inset:0;background:var(--grain);opacity:.075;pointer-events:none}
 
-header.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}
-.brand{font:700 24px var(--head);text-decoration:none;display:flex;align-items:center;gap:10px;min-height:44px}
+header.top{position:absolute;inset:0 0 auto 0;z-index:10}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:16px;padding-bottom:16px}
+.brand{font:800 26px var(--head);letter-spacing:-.02em;text-decoration:none;display:flex;align-items:center;gap:10px;min-height:44px}
 .brand i{width:12px;height:12px;border-radius:50%;background:var(--signal);display:block}
 nav.top{display:flex;gap:4px;align-items:center}
-nav.top a{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;text-decoration:none;color:var(--mute)}
-nav.top a:hover{color:var(--ink)}
+nav.top a{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;text-decoration:none;color:#cfc9be}
+nav.top a:hover{color:#fff}
 nav.top .btn{min-height:44px;margin-left:8px;color:var(--signal-ink)}
 
-.hero{display:grid;grid-template-columns:minmax(0,440px) minmax(0,1fr);gap:44px;padding:20px 0 64px;align-items:start}
-.hero h1{font-size:clamp(30px,2.8vw,40px);font-weight:700;line-height:1.08}
-.hero .lede{margin-top:20px;color:var(--mute);max-width:44ch}
-.hero .lede b{color:var(--ink);font-weight:500}
-.now{margin-top:28px;padding-top:20px;border-top:1px solid var(--line)}
-.now h2{font-size:22px;font-weight:600}
-.now dl{display:grid;grid-template-columns:auto 1fr;gap:6px 20px;margin:14px 0 0}
+/* первый экран */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;background:var(--drum)}
+.hero-bg{position:absolute;inset:0;transform-origin:68% 52%}
+.hero-bg img{position:absolute;left:-9%;top:0;width:109%;height:100%;object-fit:cover;object-position:50% 90%;filter:brightness(.72) saturate(.7) contrast(1.12)}
+.hero .scrim{position:absolute;inset:0;background:linear-gradient(0deg,rgba(14,15,17,.94) 0,rgba(14,15,17,.7) 30%,rgba(14,15,17,.12) 66%),linear-gradient(180deg,rgba(14,15,17,.65),transparent 20%)}
+.hero-in{position:relative;z-index:2;width:100%;padding-bottom:32px;padding-top:120px}
+.hero h1{font-size:clamp(46px,8vw,150px);font-weight:800;line-height:.96;letter-spacing:-.045em;max-width:12.5em}
+.hero-row{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-top:28px}
+.fact{font-size:clamp(18px,1.55vw,24px);line-height:1.4;max-width:34ch;color:var(--ink)}
+.hint{margin-top:30px;display:flex;align-items:center;gap:14px;color:var(--mute);font-size:15px}
+.hint i{display:block;width:56px;height:2px;background:var(--signal);transform-origin:0 50%}
+
+/* сцена обжарки */
+.scene{position:relative;height:300vh}
+.stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:#3f463e}
+.sbg{position:absolute;inset:0;background:#3f463e}
+.photos{position:absolute;inset:0;transform-origin:30% 50%}
+.photos img{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;object-position:40% 50%;mix-blend-mode:luminosity;opacity:.62}
+.pd{position:absolute;inset:0;clip-path:inset(0 0 0 0);mix-blend-mode:luminosity}
+.photos .pd img{mix-blend-mode:normal;opacity:1;filter:brightness(.8)}
+.stage .scrim{position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,8,6,.78) 0,rgba(10,8,6,.2) 55%,rgba(10,8,6,.3)),linear-gradient(90deg,rgba(10,8,6,.55),rgba(10,8,6,.1) 70%)}
+.sin{position:absolute;inset:0;display:flex;flex-direction:column;padding:28px 48px 24px;max-width:1600px;margin:0 auto}
+.stop{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex:none}
+.cap{font-size:16px;color:#ddd7cb}
+.timer{font:800 min(20vw,34vh)/.86 var(--head);letter-spacing:-.05em;margin:10px 0 0 -.04em;white-space:nowrap;text-shadow:0 2px 40px rgba(0,0,0,.35)}
+.timer .d{display:inline-block;width:.6em;text-align:center}
+.timer .c{display:inline-block;width:.28em;text-align:center}
+.tright{text-align:right;padding-top:6px;min-width:0}
+.temp{font:800 min(8.6vw,15vh)/.9 var(--head);letter-spacing:-.04em;white-space:nowrap}
+.temp small{font-size:.42em;font-weight:600;letter-spacing:0;margin-left:.12em}
+.tright .cap{margin-top:8px}
+.phase{margin-top:22px;margin-left:auto;max-width:25ch;font-size:19px;line-height:1.35;color:#fff;min-height:3em}
+.schart{flex:1;min-height:0;position:relative;margin-top:8px}
+.schart svg{position:absolute;inset:0;width:100%;height:100%;display:block;overflow:visible}
+svg text{font-family:var(--body)}
+svg .ax{font-family:var(--mono);font-size:11px;fill:#c4beb2}
+svg .lab{font-size:15px;font-weight:600;fill:#fff}
+svg .val{font-size:14px;fill:#ddd7cb;font-variant-numeric:tabular-nums}
+svg .pn{font-size:14px;fill:#bdb7ab;font-weight:500}
+svg .pn.on{fill:#fff;font-weight:600}
+
+section.blk{padding:112px 0;border-top:1px solid var(--line)}
+section.blk p.sub{margin-top:18px;color:var(--mute);max-width:56ch;font-size:18px}
+
+/* лоты */
+.lots-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:64px;margin-top:48px;align-items:start}
+.lotlist{list-style:none;margin:0;padding:0;border-bottom:1px solid var(--line)}
+.lot{border-top:1px solid var(--line)}
+.lotbtn{all:unset;box-sizing:border-box;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 24px;align-items:baseline;width:100%;min-height:44px;padding:24px 0 26px;cursor:pointer}
+.lotbtn:focus-visible{outline:2px solid var(--signal);outline-offset:4px}
+.lotbtn .c{font:800 clamp(38px,5vw,84px)/1 var(--head);letter-spacing:-.04em;transition:color .3s,transform .3s}
+.lotbtn .pr{font:600 clamp(20px,2vw,30px) var(--head);white-space:nowrap;font-variant-numeric:tabular-nums}
+.lotbtn .m{grid-column:1/-1;color:var(--mute);font-size:16px}
+.lotbtn .m b{color:var(--ink);font-weight:500}
+.lotbtn .nt{grid-column:1/-1;font-size:18px}
+.lot.on .c{transform:translateX(14px)}
+.lot.on .c{color:var(--signal)}
+.lotaside{position:sticky;top:24px;background:var(--plate);border-radius:4px;padding:20px 20px 22px}
+.lotaside h3{font-size:22px;font-weight:600;letter-spacing:-.01em;line-height:1.2}
+.lotaside .chart{margin-top:12px}
+.chart svg{display:block;width:100%;height:auto;overflow:visible}
+.chart svg .ax{fill:#a7a299}
+.chart svg .lab{fill:var(--ink);paint-order:stroke;stroke:#1d2023;stroke-width:5px;stroke-linejoin:round}
+.chart svg .val{fill:var(--mute)}
+.now dl{display:grid;grid-template-columns:auto 1fr;gap:6px 20px;margin:14px 0 0;font-size:15px}
 .now dt{color:var(--mute)}
 .now dd{margin:0;font-variant-numeric:tabular-nums}
-.hero .btn{margin-top:28px}
-
-.chart{position:relative;background:var(--plate);border-radius:4px;padding:8px}
-.chart svg{display:block;width:100%;height:auto;overflow:visible}
-.chart .ph{position:absolute;margin:0;width:17%;background:var(--drum);border-radius:3px;overflow:hidden}
-.chart .ph img{display:block;width:100%;height:auto}
-.chart .ph figcaption{padding:5px 8px 6px;font-size:12px;line-height:1.3;color:var(--mute)}
-.ph.start{left:14%;top:4%}
-.ph.end{right:3%;bottom:13%}
 .legend{display:none;margin:10px 4px 2px;padding:0;list-style:none;font-size:14px}
 .legend li{display:flex;gap:10px;align-items:center;padding:4px 0}
 .legend i{width:12px;height:12px;border-radius:50%;border:3px solid var(--signal);flex:none}
 .legend span{color:var(--mute);margin-left:auto;font-variant-numeric:tabular-nums}
-.chart-note{margin-top:10px;color:var(--mute);font-size:14px}
-svg text{font-family:var(--body)}
-svg .ax{font-family:var(--mono);font-size:11px;fill:#a7a299}
-svg .lab{font-size:13px;fill:var(--ink)}
-svg .val{font-size:13px;fill:var(--mute);font-variant-numeric:tabular-nums}
+.chart-note{margin-top:12px;color:var(--mute);font-size:14px}
 
-section.blk{padding:72px 0;border-top:1px solid var(--line)}
-section.blk p.sub{margin-top:12px;color:var(--mute);max-width:60ch}
-
-.lots{width:100%;border-collapse:collapse;margin-top:28px}
-.lots th{text-align:left;font-weight:500;color:var(--mute);font-size:14px;padding:0 16px 10px 16px;border-bottom:1px solid var(--line)}
-.lots td{padding:14px 16px;border-bottom:1px solid var(--line);vertical-align:middle}
-.lots tbody tr{cursor:pointer}
-.lots tbody tr:hover{background:#1a1d20}
-.lots tbody tr.on{background:var(--plate);box-shadow:inset 4px 0 0 var(--signal)}
-.lots .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
-.lots th.num{text-align:right}
-.lotbtn{all:unset;box-sizing:border-box;display:block;min-height:44px;cursor:pointer;font:600 17px/1.3 var(--head);padding:6px 0}
-.lotbtn small{display:block;font:400 14px var(--body);color:var(--mute)}
-.lotbtn:focus-visible{outline:2px solid var(--signal);outline-offset:4px}
-.lots td.price{font-weight:600;font-size:17px}
-
-.sub-grid{display:grid;grid-template-columns:minmax(0,440px) minmax(0,440px);justify-content:start;gap:72px;margin-top:32px;align-items:start}
-fieldset{border:0;padding:0;margin:0 0 26px}
-legend{padding:0;margin-bottom:10px;font-weight:500}
+/* подписка */
+.sub-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,560px);justify-content:space-between;gap:72px;margin-top:48px;align-items:start}
+fieldset{border:0;padding:0;margin:0 0 28px}
+legend{padding:0;margin-bottom:10px;font-weight:500;font-size:18px}
 .seg{display:flex;flex-wrap:wrap;gap:8px}
 .seg label{position:relative}
 .seg input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
-.seg span{display:flex;align-items:center;min-height:48px;padding:0 20px;border:1px solid var(--line);border-radius:3px;background:var(--plate)}
+.seg span{display:flex;align-items:center;min-height:52px;padding:0 24px;border:1px solid var(--line);border-radius:3px;background:var(--plate);font-size:18px}
 .seg input:checked+span{border-color:var(--signal);background:#2a1d1a}
 .seg input:focus-visible+span{outline:2px solid var(--signal);outline-offset:2px}
-.sum{background:var(--plate);border-radius:4px;padding:28px}
-.sum .big{font:700 clamp(40px,4vw,56px)/1 var(--head);font-variant-numeric:tabular-nums;margin:6px 0 4px}
-.sum ul{list-style:none;margin:18px 0 22px;padding:0;color:var(--mute)}
-.sum li{display:flex;justify-content:space-between;gap:16px;padding:8px 0;border-top:1px solid var(--line)}
+.sum{background:var(--plate);border-radius:4px;padding:32px}
+.sum .big{font:800 clamp(52px,6vw,96px)/1 var(--head);letter-spacing:-.04em;font-variant-numeric:tabular-nums;margin:8px 0 6px}
+.sum ul{list-style:none;margin:20px 0 24px;padding:0;color:var(--mute)}
+.sum li{display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-top:1px solid var(--line)}
 .sum li b{color:var(--ink);font-weight:500;font-variant-numeric:tabular-nums;text-align:right}
 .sum .btn{width:100%}
 
-.dl2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:56px;margin-top:32px}
-.dl2 h3{font-size:22px;font-weight:600;margin-bottom:14px}
+/* доставка */
+.days{list-style:none;margin:48px 0 0;padding:0;border-bottom:1px solid var(--line)}
+.days li{display:flex;justify-content:space-between;align-items:baseline;gap:16px 40px;flex-wrap:wrap;padding:22px 0;border-top:1px solid var(--line)}
+.days b{font:800 clamp(30px,4vw,64px)/1.05 var(--head);letter-spacing:-.035em}
+.days span{color:var(--mute);font-size:18px;max-width:34ch}
+.dl2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:56px;margin-top:64px}
+.dl2 h3{font-size:24px;font-weight:600;letter-spacing:-.01em;margin-bottom:14px}
 .rows{margin:0;padding:0;list-style:none}
 .rows li{display:grid;grid-template-columns:minmax(0,170px) minmax(0,1fr);gap:16px;padding:12px 0;border-top:1px solid var(--line)}
 .rows li span:first-child{color:var(--mute)}
-.pay{margin-top:36px;color:var(--mute);max-width:70ch}
+.pay{margin-top:40px;color:var(--mute);max-width:70ch}
 .pay b{color:var(--ink);font-weight:500}
 
 footer{border-top:1px solid var(--line);padding:36px 0 48px;color:var(--mute);font-size:14px}
@@ -118,8 +159,8 @@ footer a{color:var(--ink)}
 dialog{width:min(460px,calc(100vw - 32px));max-height:calc(100vh - 32px);overflow:auto;background:var(--plate);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:0}
 #dForm,#dDone{padding:28px}
 dialog::backdrop{background:rgba(10,11,12,.75)}
-dialog h2{font-size:24px;margin-bottom:6px}
-dialog .hint{color:var(--mute);margin-bottom:18px}
+dialog h2{font-size:24px;margin-bottom:6px;letter-spacing:-.01em;line-height:1.2;font-weight:600}
+dialog .hint{color:var(--mute);margin:0 0 18px;display:block;font-size:16px}
 .f{display:block;margin-bottom:16px}
 .f span{display:block;margin-bottom:6px;font-weight:500}
 .f input{width:100%;min-height:48px;padding:0 14px;background:var(--drum);border:1px solid var(--line);border-radius:3px;color:var(--ink);font:400 16px var(--body)}
@@ -131,76 +172,122 @@ dialog .hint{color:var(--mute);margin-bottom:18px}
 [hidden]{display:none!important}
 
 @media (max-width:1000px){
-  .hero{grid-template-columns:1fr;gap:28px}
   .sub-grid,.dl2{grid-template-columns:1fr;gap:36px}
 }
-@media (max-width:760px){
+@media (max-width:900px){
+  .lots-grid{grid-template-columns:1fr;gap:0}
+  .lotaside{position:static;margin:0 0 24px;padding:16px}
   .legend{display:block}
+  .now dl{display:none}
+  .lot.on .c{transform:none}
+}
+@media (max-width:760px){
   .wrap{padding:0 16px}
   nav.top a:not(.btn){display:none}
-  .hero{padding-bottom:48px}
-  .chart .ph{position:static;width:auto}
-  .chart .phs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
-  section.blk{padding:48px 0}
-  .lots thead{display:none}
-  .lots,.lots tbody,.lots tr,.lots td{display:block}
-  .lots tr{padding:10px 12px 12px;border-bottom:1px solid var(--line)}
-  .lots td{padding:2px 0;border:0}
-  .lots td.num{text-align:left}
-  .lots td[data-l]::before{content:attr(data-l) ": ";color:var(--mute)}
-  .lots td.price{margin-top:4px}
-  .rows li{grid-template-columns:1fr;gap:2px}
+  .hero h1{font-size:13vw;line-height:.98}
+  .hero-in{padding-top:96px;padding-bottom:24px}
+  .hero-bg img{top:-70px;height:calc(100% + 70px)}
+  .hero-row{margin-top:20px}
+  .hero-row .btn{width:100%}
+  .hint{margin-top:22px}
+  .scene{height:200vh}
+  .sin{padding:20px 16px 16px}
+  .timer{font-size:min(27vw,15vh)}
+  .temp{font-size:min(13vw,8vh)}
+  .stop{flex-direction:column;gap:0}
+  .tright{text-align:left;display:grid;grid-template-columns:auto 1fr;gap:0 14px;align-items:center;margin-top:6px;padding:0;width:100%}
+  .temp{grid-row:1/3;font-size:min(14vw,8vh)}
+  .tright .cap{margin:0;font-size:13px;align-self:end}
+  .cap{font-size:14px}
+  .phase{font-size:14px;margin:2px 0 0;max-width:none;min-height:2.8em;align-self:start}
+  section.blk{padding:64px 0}
+  .lotbtn{padding:18px 0 20px}
+  .lotbtn .nt{font-size:16px}
   .sum{padding:20px}
+  .rows li{grid-template-columns:1fr;gap:2px}
+  .days li{padding:16px 0}
 }
-@media (min-width:761px){.phs{display:contents}}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .scene{height:auto}
+  .stage{position:relative;height:auto;min-height:100svh;display:flex}
+  .lotbtn .c{transition:none}
+}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header class="top">
+<header class="top">
+  <div class="wrap">
     <a class="brand" href="#"><i aria-hidden="true"></i>Ember</a>
     <nav class="top" aria-label="Разделы">
       <a href="#lots">Лоты</a><a href="#subscribe">Подписка</a><a href="#delivery">Доставка</a>
       <button class="btn" type="button" data-open="Хочу заказать кофе. Расскажите про лоты и доставку.">Оставить заявку</button>
     </nav>
-  </header>
-
-  <main>
-  <div class="hero">
-    <div>
-      <h1>Обжариваем по вторникам и пятницам, доставка по Алматы на следующий день</h1>
-      <p class="lede">Обжарщик в Алматы. Один цикл: <b>загрузка при 195 °C, выгрузка через 10–12 минут</b>. На графике профиль, по которому мы ведём зерно. Нажмите на лот в таблице ниже, и кривая перестроится под него.</p>
-      <div class="now" aria-live="polite">
-        <h2 id="nowName">Эфиопия Гуджи</h2>
-        <dl id="nowDl"></dl>
-      </div>
-      <a class="btn" href="#subscribe">Собрать подписку</a>
-    </div>
-    <div>
-      <div class="chart" id="chartBox">
-        <svg id="chart" role="img" aria-label="График температуры зерна по времени для выбранного лота"></svg>
-        <div class="phs">
-          <figure class="ph start"><img src="img/roast-trier-2.jpg" width="900" height="675" alt="Зелёные необжаренные зёрна в щупе обжарочной машины"><figcaption>Загрузка: зелёное зерно в щупе</figcaption></figure>
-          <figure class="ph end"><img src="img/roast-trier.jpg" width="900" height="675" alt="Обжаренные коричневые зёрна в щупе обжарочной машины"><figcaption>Выгрузка: то же зерно после обжарки</figcaption></figure>
-        </div>
-        <ul class="legend" id="legend"></ul>
-      </div>
-      <p class="chart-note">Температура зерна в барабане, °C, по минутам обжарки. Кривая показывает типичный профиль для лота этой степени обжарки.</p>
-    </div>
   </div>
+</header>
 
+<main>
+  <section class="hero" id="top">
+    <div class="hero-bg" id="heroBg"><img src="img/roast-dark-full.jpg" width="1920" height="1280" alt="Обжаренные зёрна в щупе обжарочной машины, барабан размыт на фоне" fetchpriority="high"></div>
+    <div class="scrim"></div><div class="grain"></div>
+    <div class="hero-in wrap">
+      <h1 id="h1">Обжариваем каждый вторник и пятницу</h1>
+      <div class="hero-row" id="heroRow">
+        <p class="fact">Доставка по Алматы на следующий день после обжарки: в среду и в субботу.</p>
+        <a class="btn" href="#subscribe">Собрать подписку</a>
+      </div>
+      <p class="hint" id="hint"><i id="hintLine" aria-hidden="true"></i>листайте: обжарка идёт 10 минут</p>
+    </div>
+  </section>
+
+  <section class="scene" id="scene" aria-label="Обжарка одной партии за 10 минут 30 секунд">
+    <div class="stage">
+      <div class="sbg" id="sBg"></div>
+      <div class="photos" id="photos">
+        <img src="img/roast-green-full.jpg" width="1920" height="1280" alt="Зелёные необжаренные зёрна в щупе обжарочной машины" decoding="async">
+        <div class="pd" id="sDark"><img src="img/roast-dark-full.jpg" width="1920" height="1280" alt="Обжаренные коричневые зёрна в щупе обжарочной машины" decoding="async"></div>
+      </div>
+      <div class="scrim"></div><div class="grain"></div>
+      <div class="sin">
+        <p class="sr">Профиль одной партии: загрузка при 195 °C, поворотная точка 1:12 при 89 °C, первый крэк на 8:18 при 198 °C, выгрузка на 10:30 при 207 °C.</p>
+        <div class="stop" aria-hidden="true">
+          <div>
+            <p class="cap">Одна партия, от загрузки до выгрузки</p>
+            <div class="timer" id="sTimer">0:00</div>
+          </div>
+          <div class="tright">
+            <div class="temp"><span id="sTemp">195</span><small>°C</small></div>
+            <p class="cap">температура зерна</p>
+            <p class="phase" id="sPhase"></p>
+          </div>
+        </div>
+        <div class="schart" id="sBox"><svg id="sChart" aria-hidden="true"></svg></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
   <section class="blk" id="lots">
-    <h2>Лоты этой недели</h2>
-    <p class="sub">Цена за пачку 250 г. Строка выбирает профиль на графике.</p>
-    <table class="lots">
-      <thead><tr><th>Лот</th><th>Обработка</th><th>Ноты</th><th class="num">SCA</th><th>Обжарка</th><th class="num">250 г</th></tr></thead>
-      <tbody id="lotsBody"></tbody>
-    </table>
+    <h2 class="rv">Лоты этой недели</h2>
+    <p class="sub">Цена за пачку 250 г. Нажмите на лот, и график покажет его профиль обжарки.</p>
+    <div class="lots-grid">
+      <ol class="lotlist" id="lotsList"></ol>
+      <div id="lotHome">
+        <aside class="lotaside" id="lotAside" aria-live="polite">
+          <h3 id="nowName">Эфиопия Гуджи</h3>
+          <div class="chart" id="chartBox">
+            <svg id="chart" role="img" aria-label="График температуры зерна по времени для выбранного лота"></svg>
+          </div>
+          <div class="now"><dl id="nowDl"></dl></div>
+          <ul class="legend" id="legend"></ul>
+          <p class="chart-note">Температура зерна в барабане, °C, по минутам обжарки.</p>
+        </aside>
+      </div>
+    </div>
   </section>
 
   <section class="blk" id="subscribe">
-    <h2>Подписка: кофе приходит сам</h2>
+    <h2 class="rv">Подписка: кофе приходит сам</h2>
     <p class="sub">Выберите способ заваривания, объём и частоту. Цена считается сразу, доставка по Алматы в подписке бесплатна.</p>
     <div class="sub-grid">
       <form id="subForm" onsubmit="return false">
@@ -214,7 +301,7 @@ dialog .hint{color:var(--mute);margin-bottom:18px}
           <label><input type="radio" name="f" value="2" checked><span>Раз в 2 недели</span></label>
           <label><input type="radio" name="f" value="4"><span>Раз в 4 недели</span></label></div></fieldset>
       </form>
-      <div class="sum" aria-live="polite">
+      <div class="sum" id="sumBox" aria-live="polite">
         <div>Одна доставка</div>
         <div class="big" id="sPrice">5 500 ₸</div>
         <ul>
@@ -229,14 +316,17 @@ dialog .hint{color:var(--mute);margin-bottom:18px}
   </section>
 
   <section class="blk" id="delivery">
-    <h2>Доставка и оплата</h2>
+    <h2 class="rv">Доставка и оплата</h2>
+    <ul class="days">
+      <li><b>Вторник и пятница</b><span>обжарка, дата обжарки на этикетке</span></li>
+      <li><b>Среда и суббота</b><span>привозим по Алматы с 10:00 до 20:00</span></li>
+      <li><b>До 18:00 в понедельник и четверг</b><span>принимаем заказ на ближайшую обжарку</span></li>
+    </ul>
     <div class="dl2">
       <div>
         <h3>По Алматы</h3>
         <ul class="rows">
-          <li><span>Обжарка</span><span>вторник и пятница</span></li>
-          <li><span>Заказ принимаем</span><span>до 18:00 в понедельник и четверг</span></li>
-          <li><span>Привезём</span><span>в среду и в субботу, с 10:00 до 20:00</span></li>
+          <li><span>Срок</span><span>на следующий день после обжарки</span></li>
           <li><span>Стоимость</span><span>1 500 ₸, бесплатно от 12 000 ₸ и в подписке</span></li>
         </ul>
       </div>
@@ -246,19 +336,19 @@ dialog .hint{color:var(--mute);margin-bottom:18px}
           <li><span>Астана, Шымкент, Караганда</span><span>2–3 дня после обжарки</span></li>
           <li><span>Остальные города</span><span>3–6 дней, курьерской службой</span></li>
           <li><span>Стоимость</span><span>2 500 ₸ за заказ, бесплатно от 25 000 ₸</span></li>
-          <li><span>Упаковка</span><span>пачка с клапаном, дата обжарки на этикетке</span></li>
+          <li><span>Упаковка</span><span>пачка с клапаном</span></li>
         </ul>
       </div>
     </div>
     <p class="pay"><b>Оплата:</b> Kaspi (перевод или Kaspi QR) или картой. Для кофейни и офиса от 5 кг в неделю цену считаем отдельно, напишите заявку.</p>
   </section>
-  </main>
 
   <footer>
     <p>Концепт сайта, бренд вымышленный. Сделал Абдуали.</p>
     <p>Фото: Jameswasswa, лицензия CC BY-SA 4.0, снимки обрезаны. <a href="https://commons.wikimedia.org/wiki/File:Closer_look_at_the_coffee_beans_from_the_coffee_roasting_machine_looking_at_their_progress.jpg" rel="noopener">Зелёное зерно</a>, <a href="https://commons.wikimedia.org/wiki/File:Closer_look_at_the_progress_of_the_coffee_beans_in_the_roasting_machine_as_they_change_color.jpg" rel="noopener">обжаренное зерно</a>, Wikimedia Commons.</p>
   </footer>
-</div>
+  </div>
+</main>
 
 <dialog id="dlg" aria-labelledby="dTitle">
   <form id="dForm" method="dialog">
@@ -276,12 +366,15 @@ dialog .hint{color:var(--mute);margin-bottom:18px}
   </div>
 </dialog>
 
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
 <script>
 (function(){
-var T=function(n){return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g,' ')+' ₸'};
+var T=function(n){return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g,' ')+' ₸'};
 var mm=function(m){var s=Math.round(m*60);return Math.floor(s/60)+':'+('0'+s%60).slice(-2)};
 var $=function(i){return document.getElementById(i)};
-var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var clamp=function(v,a,b){return Math.max(a,Math.min(b,v))};
 
 /* лоты: поворотная точка, первый крэк, выгрузка [минуты, °C] */
 var LOTS=[
@@ -305,12 +398,13 @@ function curve(p){
   };
 }
 
-var svg=$('chart'), box=$('chartBox'), reveal=1;
+/* ===== график лота (рядом со списком) ===== */
+var svg=$('chart'), box=$('chartBox');
 var X0=0,X1=13,Y0=60,Y1=230;
 function draw(){
-  var W=Math.max(300,box.clientWidth-16), mob=W<640;
-  var H=mob?Math.round(W*1.2):Math.round(W*.575);
-  var m={l:46,r:14,t:14,b:34}, pw=W-m.l-m.r, ph=H-m.t-m.b;
+  var W=Math.max(260,box.clientWidth), mob=W<420;
+  var H=mob?Math.round(W*.95):Math.round(W*.72);
+  var m={l:40,r:12,t:14,b:32}, pw=W-m.l-m.r, ph=H-m.t-m.b;
   var x=function(t){return m.l+(t-X0)/(X1-X0)*pw}, y=function(c){return m.t+(Y1-c)/(Y1-Y0)*ph};
   svg.setAttribute('viewBox','0 0 '+W+' '+H);
   var f=curve(P), pts=[], n=140, i;
@@ -318,28 +412,26 @@ function draw(){
   var g='';
   [80,120,160,200].forEach(function(c){g+='<line x1="'+m.l+'" x2="'+(W-m.r)+'" y1="'+y(c)+'" y2="'+y(c)+'" stroke="#32363b"/><text class="ax" x="'+(m.l-8)+'" y="'+(y(c)+4)+'" text-anchor="end">'+c+'</text>'});
   g+='<text class="ax" x="'+(m.l-8)+'" y="'+(m.t-3)+'" text-anchor="end">°C</text>';
-  for(i=0;i<=12;i+=mob?4:2){g+='<line x1="'+x(i)+'" x2="'+x(i)+'" y1="'+(H-m.b)+'" y2="'+(H-m.b+5)+'" stroke="#a7a299"/><text class="ax" x="'+x(i)+'" y="'+(H-m.b+19)+'" text-anchor="middle">'+i+':00</text>'}
+  for(i=0;i<=12;i+=4){g+='<line x1="'+x(i)+'" x2="'+x(i)+'" y1="'+(H-m.b)+'" y2="'+(H-m.b+5)+'" stroke="#a7a299"/><text class="ax" x="'+x(i)+'" y="'+(H-m.b+19)+'" text-anchor="middle">'+i+':00</text>'}
   g+='<line x1="'+m.l+'" x2="'+(W-m.r)+'" y1="'+(H-m.b)+'" y2="'+(H-m.b)+'" stroke="#a7a299"/>';
   function mark(t,c,name,anchor,ly){
-    if(mob)return '<line x1="'+x(t)+'" x2="'+x(t)+'" y1="'+y(c)+'" y2="'+(H-m.b)+'" stroke="#ff5533" stroke-dasharray="3 4" opacity=".7"/><circle cx="'+x(t)+'" cy="'+y(c)+'" r="6" fill="#15171a" stroke="#ff5533" stroke-width="3"/>';
     var px=x(t),py=y(c);
-    var o='<line x1="'+px+'" x2="'+px+'" y1="'+py+'" y2="'+ly+'" stroke="#ff5533" stroke-dasharray="3 4" opacity=".7"/>';
+    var o='<line x1="'+px+'" x2="'+px+'" y1="'+py+'" y2="'+(H-m.b)+'" stroke="#ff5533" stroke-dasharray="3 4" opacity=".7"/>';
     o+='<circle cx="'+px+'" cy="'+py+'" r="6" fill="#15171a" stroke="#ff5533" stroke-width="3"/>';
-    var tx=anchor==='end'?px-8:(anchor==='start'?px+4:px);
-    o+='<text class="lab" x="'+tx+'" y="'+ly+'" text-anchor="'+anchor+'" font-weight="600">'+name+'</text>';
-    o+='<text class="val" x="'+tx+'" y="'+(ly+16)+'" text-anchor="'+anchor+'">'+mm(t)+', '+Math.round(c)+' °C</text>';
+    if(mob)return o;
+    var tx=anchor==='end'?px-10:px+10;
+    o+='<text class="lab" x="'+tx+'" y="'+ly+'" text-anchor="'+anchor+'" font-weight="600" style="font-size:13px">'+name+'</text>';
     return o;
   }
-  var mk=mark(P.a,P.b,'Поворотная точка',mob?'start':'middle',y(P.b)+22);
-  mk+=mark(P.c,P.d,'Первый крэк','end',y(mob?150:165));
-  mk+=mark(P.e,P.f,'Выгрузка','end',y(mob?122:142));
-  svg.innerHTML='<defs><clipPath id="cp"><rect x="0" y="0" width="'+(reveal*W)+'" height="'+H+'"/></clipPath></defs>'+g+
-    '<g clip-path="url(#cp)"><polyline points="'+pts.join(' ')+'" fill="none" stroke="#ff5533" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/>'+mk+'</g>';
+  var mk=mark(P.a,P.b,'Поворот','start',y(P.b)+4);
+  mk+=mark(P.c,P.d,'Первый крэк','end',y(P.d)-14);
+  mk+=mark(P.e,P.f,'Выгрузка','end',y(P.f)+40);
+  svg.innerHTML=g+'<polyline points="'+pts.join(' ')+'" fill="none" stroke="#ff5533" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/>'+mk;
 }
-var raf;
+var raf, reduceNow=function(){return matchMedia('(prefers-reduced-motion: reduce)').matches};
 function tween(to){
   cancelAnimationFrame(raf);
-  if(reduce){P=to;draw();return}
+  if(reduceNow()){P=to;draw();return}
   var from=Object.assign({},P),t0=performance.now(),D=800;
   (function step(now){
     var k=Math.min(1,(now-t0)/D),e=1-Math.pow(1-k,3);
@@ -348,35 +440,94 @@ function tween(to){
     if(k<1)raf=requestAnimationFrame(step);
   })(t0);
 }
-function intro(){
-  if(reduce){reveal=1;draw();return}
-  reveal=0;var t0=performance.now();
-  (function step(now){
-    var k=Math.min(1,(now-t0)/900);reveal=1-Math.pow(1-k,3);draw();
-    if(k<1)requestAnimationFrame(step);
-  })(t0);
-}
 function readout(){
   var l=LOTS[cur],dtr=Math.round((l.dr[0]-l.fc[0])/l.dr[0]*100);
   $('nowName').textContent=l.n+' '+l.r+', '+l.roast+' обжарка';
   $('legend').innerHTML=[['Поворотная точка',l.tp],['Первый крэк',l.fc],['Выгрузка',l.dr]].map(function(a){return '<li><i></i>'+a[0]+'<span>'+mm(a[1][0])+', '+a[1][1]+' °C</span></li>'}).join('');
   $('nowDl').innerHTML='<dt>Поворотная точка</dt><dd>'+mm(l.tp[0])+', '+l.tp[1]+' °C</dd><dt>Первый крэк</dt><dd>'+mm(l.fc[0])+', '+l.fc[1]+' °C</dd><dt>Выгрузка</dt><dd>'+mm(l.dr[0])+', '+l.dr[1]+' °C</dd><dt>После крэка</dt><dd>'+dtr+'% времени обжарки</dd>';
 }
-function mark(i){
-  [].forEach.call($('lotsBody').rows,function(r,k){r.classList.toggle('on',k===i);r.querySelector('button').setAttribute('aria-pressed',String(k===i))});
-}
-function pick(i){cur=i;mark(i);readout();tween(pack(LOTS[i]))}
-
-$('lotsBody').innerHTML=LOTS.map(function(l){
-  return '<tr><td><button class="lotbtn" type="button" aria-pressed="false">'+l.n+'<small>'+l.r+'</small></button></td>'+
-  '<td data-l="Обработка">'+l.p+'</td><td data-l="Ноты">'+l.notes+'</td><td class="num" data-l="SCA">'+l.sca+'</td><td data-l="Обжарка">'+l.roast+'</td><td class="num price">'+T(l.price)+'</td></tr>';
+var list=$('lotsList'), aside=$('lotAside'), mqM=matchMedia('(max-width:900px)');
+list.innerHTML=LOTS.map(function(l){
+  return '<li class="lot"><button class="lotbtn" type="button" aria-pressed="false"><span class="c">'+l.n+'</span><span class="pr">'+T(l.price)+'</span>'+
+  '<span class="m"><b>'+l.r+'</b>, '+l.p+' обработка, обжарка '+l.roast+', SCA '+l.sca+'</span><span class="nt">'+l.notes+'</span></button></li>';
 }).join('');
-[].forEach.call($('lotsBody').rows,function(r,i){r.addEventListener('click',function(){pick(i)})});
-mark(0);readout();
+function place(){
+  if(mqM.matches)list.children[cur].appendChild(aside);else $('lotHome').appendChild(aside);
+}
+function mark(i){
+  [].forEach.call(list.children,function(li,k){li.classList.toggle('on',k===i);li.querySelector('button').setAttribute('aria-pressed',String(k===i))});
+}
+function pick(i){cur=i;mark(i);place();readout();tween(pack(LOTS[i]))}
+[].forEach.call(list.querySelectorAll('button'),function(b,i){b.addEventListener('click',function(){pick(i)})});
+if(mqM.addEventListener)mqM.addEventListener('change',place);
+mark(0);place();readout();
 if(window.ResizeObserver)new ResizeObserver(draw).observe(box);else addEventListener('resize',draw);
-draw();intro();
+draw();
 
-/* подписка */
+/* ===== сцена: обжарка на скролле ===== */
+var END=10.5, LEAD=.5, TAIL=.6;                 /* минуты сцены; LEAD и TAIL: паузы в начале и конце */
+var SP={a:1.2,b:89,c:8.3,d:198,e:END,f:207}, SF=curve(SP), S={t:0};
+var PH=[0,4.5,SP.c,END];
+var PHT=['Сушка: зерно отдаёт влагу и желтеет','Реакция Майяра: зерно темнеет, появляется аромат','Развитие: после первого крэка, до выгрузки'];
+var sBox=$('sBox'), sSvg=$('sChart'), E={}, lastTimer='';
+function sDraw(){
+  var W=sBox.clientWidth,H=sBox.clientHeight; if(!W||!H)return;
+  var mob=W<640, m={l:mob?34:56,r:mob?12:70,t:22,b:mob?60:74}, pw=W-m.l-m.r, ph=H-m.t-m.b, XM=11;
+  var x=function(t){return m.l+t/XM*pw}, y=function(c){return m.t+(Y1-c)/(Y1-Y0)*ph};
+  sSvg.setAttribute('viewBox','0 0 '+W+' '+H);
+  var pts=[],cum=[0],n=200,i,px,py,d='';
+  for(i=0;i<=n;i++){var t=END*i/n,X=x(t),Y=y(SF(t));pts.push([X,Y]);if(i)cum.push(cum[i-1]+Math.hypot(X-px,Y-py));px=X;py=Y;d+=(i?'L':'M')+X.toFixed(1)+','+Y.toFixed(1)}
+  E.pts=pts;E.cum=cum;E.len=cum[n];E.n=n;E.x=x;E.y=y;
+  var g='';
+  [100,150,200].forEach(function(c){g+='<line x1="'+m.l+'" x2="'+(W-m.r)+'" y1="'+y(c)+'" y2="'+y(c)+'" stroke="#fff" opacity=".14"/><text class="ax" x="'+(m.l-8)+'" y="'+(y(c)+4)+'" text-anchor="end">'+c+'</text>'});
+  g+='<text class="ax" x="'+(m.l-8)+'" y="'+(m.t-8)+'" text-anchor="end">°C</text>';
+  var ab=H-m.b;
+  for(i=0;i<=10;i+=mob?5:2){g+='<line x1="'+x(i)+'" x2="'+x(i)+'" y1="'+ab+'" y2="'+(ab+5)+'" stroke="#c4beb2"/><text class="ax" x="'+x(i)+'" y="'+(ab+19)+'" text-anchor="'+(i===0?'start':'middle')+'">'+i+':00</text>'}
+  g+='<line x1="'+m.l+'" x2="'+(W-m.r)+'" y1="'+ab+'" y2="'+ab+'" stroke="#c4beb2"/>';
+  var ghost='<path d="'+d+'" fill="none" stroke="#fff" stroke-opacity=".2" stroke-width="1.5" stroke-dasharray="2 6" stroke-linecap="round"/>';
+  var main='<path id="sLine" d="'+d+'" fill="none" stroke="#ff5533" stroke-width="'+(mob?4:5)+'" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="'+E.len+'" stroke-dashoffset="'+E.len+'"/><circle id="sHead" r="'+(mob?6:8)+'" fill="#fff" stroke="#ff5533" stroke-width="4"/>';
+  var marks=[[SP.a,SP.b,'Поворотная точка','Поворот','start',12,5,0],[SP.c,SP.d,'Первый крэк','1-й крэк','end',-6,-30,0],[SP.e,SP.f,'Выгрузка','Выгрузка','end',4,mob?46:36,0]], mk='';
+  marks.forEach(function(k,j){
+    var X=x(k[0]),Y=y(k[1]),tx=X+k[5];
+    mk+='<g id="mk'+j+'" opacity="0"><line x1="'+X+'" x2="'+X+'" y1="'+Y+'" y2="'+ab+'" stroke="#fff" stroke-opacity=".5" stroke-dasharray="3 4"/><circle cx="'+X+'" cy="'+Y+'" r="7" fill="#15171a" stroke="#ff5533" stroke-width="3.5"/>'+
+    '<text class="lab" x="'+tx+'" y="'+(Y+k[6])+'" text-anchor="'+k[4]+'" style="font-size:'+(mob?13:16)+'px">'+(mob?k[3]:k[2])+'</text>'+
+    '<text class="val" x="'+tx+'" y="'+(Y+k[6]+(mob?15:18))+'" text-anchor="'+k[4]+'" style="font-size:'+(mob?12:14)+'px">'+mm(k[0])+', '+k[1]+' °C</text></g>';
+  });
+  var phn=['сушка',mob?'Майяр':'реакция Майяра','развитие'], ps='';
+  for(i=0;i<3;i++){
+    var a=x(PH[i])+(i?4:0),b=x(PH[i+1])-4;
+    ps+='<g id="pg'+i+'"><line x1="'+a+'" x2="'+b+'" y1="'+(ab+(mob?34:40))+'" y2="'+(ab+(mob?34:40))+'" stroke="#fff" stroke-opacity=".3" stroke-width="3" stroke-linecap="round"/><text class="pn" x="'+a+'" y="'+(ab+(mob?52:62))+'">'+phn[i]+'</text></g>';
+  }
+  sSvg.innerHTML=g+ghost+ps+main+mk;
+  E.line=$('sLine');E.head=$('sHead');E.mk=[0,1,2].map(function(j){return $('mk'+j)});E.pg=[0,1,2].map(function(j){return $('pg'+j)});
+  E.mkT=[SP.a,SP.c,SP.e];
+  sRender();
+}
+function sRender(){
+  var t=S.t,secs=Math.floor(t*60+1e-6);
+  var str=Math.floor(secs/60)+':'+('0'+secs%60).slice(-2);
+  if(str!==lastTimer){lastTimer=str;$('sTimer').innerHTML=str.split('').map(function(c){return c===':'?'<span class="c">:</span>':'<span class="d">'+c+'</span>'}).join('')}
+  var temp=Math.round(SF(t));$('sTemp').textContent=temp;
+  var ph=t<PH[1]?0:t<PH[2]?1:2;
+  $('sPhase').textContent=t>=END-.001?'Выгрузка: зерно уходит в охлаждение':PHT[ph];
+  if(!E.line)return;
+  var f=clamp(t/END,0,1)*E.n,i0=Math.min(E.n-1,Math.floor(f)),fr=f-i0;
+  var L=E.cum[i0]+(E.cum[i0+1]-E.cum[i0])*fr;
+  E.line.setAttribute('stroke-dashoffset',(E.len-L).toFixed(1));
+  E.head.setAttribute('cx',(E.pts[i0][0]+(E.pts[i0+1][0]-E.pts[i0][0])*fr).toFixed(1));
+  E.head.setAttribute('cy',(E.pts[i0][1]+(E.pts[i0+1][1]-E.pts[i0][1])*fr).toFixed(1));
+  E.head.setAttribute('opacity',t>=END-.001?0:1);
+  for(var j=0;j<3;j++){
+    E.mk[j].setAttribute('opacity',clamp((t-E.mkT[j]+.3)/.3,0,1).toFixed(2));
+    var on=j===ph,tx=E.pg[j].lastChild,ln=E.pg[j].firstChild;
+    tx.setAttribute('class','pn'+(on?' on':''));
+    ln.setAttribute('stroke',on?'#ff5533':'#fff');ln.setAttribute('stroke-opacity',on?1:.3);
+  }
+}
+if(window.ResizeObserver)new ResizeObserver(sDraw).observe(sBox);else addEventListener('resize',sDraw);
+sDraw();
+
+/* ===== подписка ===== */
 var PR={esp:{250:5500,1000:19800},fil:{250:6800,1000:24500}};
 var sel=function(n){return document.querySelector('input[name='+n+']:checked').value};
 function calc(){
@@ -390,7 +541,7 @@ function calc(){
 }
 $('subForm').addEventListener('change',calc);calc();
 
-/* заявка */
+/* ===== заявка ===== */
 var dlg=$('dlg'),ctx='';
 function open(text){
   ctx=text;$('dForm').hidden=false;$('dDone').hidden=true;$('dForm').reset();
@@ -406,6 +557,69 @@ $('dForm').addEventListener('submit',function(e){
   $('waMsg').textContent='Новая заявка с сайта Ember\nИмя: '+d.get('name').trim()+'\nТелефон: '+d.get('tel').trim()+'\n'+ctx;
   $('dForm').hidden=true;$('dDone').hidden=false;
 });
+
+/* ===== движение ===== */
+var qs=location.search, shot=/[?&]shot=([\d.]+)/.exec(qs); shot=shot?clamp(+shot[1],0,1):null;
+var only=(/[?&]only=(\w+)/.exec(qs)||[])[1];
+function finalScene(){S.t=END;$('sBg').style.background='#1c120c';sRender()}
+if(!(window.gsap&&window.ScrollTrigger&&window.SplitText)){finalScene();return}
+gsap.registerPlugin(ScrollTrigger,SplitText);
+ScrollTrigger.config({ignoreMobileResize:true});
+var mq=gsap.matchMedia(), fontsOk=Promise.race([document.fonts?document.fonts.ready:Promise.resolve(),new Promise(function(r){setTimeout(r,2500)})]);
+
+mq.add({rm:'(prefers-reduced-motion: no-preference)',still:'(prefers-reduced-motion: reduce)'},function(ctxm){
+  if(ctxm.conditions.still){finalScene();return}
+  var h1=$('h1'), h1tw, intro;
+  gsap.set(h1,{autoAlpha:0});
+  gsap.set('#heroRow',{autoAlpha:0,y:16});
+  gsap.set('#hint',{autoAlpha:0});
+  /* сцена: одна timeline, ease none, scrub .6 */
+  var tl=gsap.timeline(shot===null?{scrollTrigger:{trigger:'#scene',start:'top top',end:'bottom bottom',scrub:.6}}:{paused:true});
+  tl.fromTo('#sBg',{backgroundColor:'#3f463e'},{backgroundColor:'#7a3f12',duration:5.4,ease:'none'},LEAD)
+    .to('#sBg',{backgroundColor:'#1c120c',duration:5.1,ease:'none'},LEAD+5.4)
+    .fromTo('#sDark',{clipPath:'inset(0% 100% 0% 0%)'},{clipPath:'inset(0% 0% 0% 0%)',duration:1.8,ease:'none'},LEAD+7.4)
+    .fromTo('#photos',{scale:1},{scale:1.1,duration:LEAD+END+TAIL,ease:'none'},0)
+    .to(S,{t:END,duration:END,ease:'none',onUpdate:sRender},LEAD)
+    .to({},{duration:.001},LEAD+END+TAIL-.001);
+  sRender();
+  fontsOk.then(function(){
+    SplitText.create(h1,{type:'lines',mask:'lines',linesClass:'ln',autoSplit:true,onSplit:function(self){
+      gsap.set(h1,{autoAlpha:1});
+      h1tw=gsap.from(self.lines,{yPercent:115,duration:1,stagger:.12,ease:'power3.out',delay:.1});
+      if(shot!==null)h1tw.progress(1);
+      return h1tw;
+    }});
+    intro=gsap.timeline()
+      .fromTo('#heroBg',{scale:1.12},{scale:1,duration:1.6,ease:'power2.out'},0)
+      .to('#heroRow',{autoAlpha:1,y:0,duration:.6,ease:'power2.out'},.85)
+      .to('#hint',{autoAlpha:1,duration:.6},1.1);
+    gsap.fromTo('#hintLine',{scaleX:0},{scaleX:1,duration:1.6,repeat:-1,repeatDelay:.5,ease:'power2.inOut',delay:1.6});
+    /* заголовки блоков по строкам */
+    document.querySelectorAll('.rv').forEach(function(h){
+      SplitText.create(h,{type:'lines',mask:'lines',linesClass:'ln',autoSplit:true,onSplit:function(self){
+        var tw=gsap.from(self.lines,{yPercent:115,duration:.9,stagger:.1,ease:'power3.out',scrollTrigger:{trigger:h,start:'top 88%',once:true}});
+        if(shot!==null)tw.progress(1);
+        return tw;
+      }});
+    });
+    /* строки лотов и дней: раскрытие clip-path, один раз */
+    var rows=gsap.utils.toArray('.lot,.days li');
+    if(shot===null)gsap.set(rows,{clipPath:'inset(0 100% 0 0)'});
+    ScrollTrigger.batch(rows,{start:'top 92%',once:true,onEnter:function(b){gsap.to(b,{clipPath:'inset(0 0% 0 0)',duration:.8,stagger:.1,ease:'power2.out',onComplete:function(){gsap.set(b,{clearProps:'clipPath'})}})}});
+    if(shot===null)gsap.set('#sumBox',{clipPath:'inset(100% 0 0 0)'});
+    ScrollTrigger.create({trigger:'#sumBox',start:'top 90%',once:true,onEnter:function(){gsap.to('#sumBox',{clipPath:'inset(0% 0 0 0)',duration:.9,ease:'power2.out',onComplete:function(){gsap.set('#sumBox',{clearProps:'clipPath'})}})}});
+    if(shot!==null){
+      intro.progress(1);
+      tl.progress(shot);
+      /* headless-скриншот не видит прокрутку скриптом: прячем всё, что выше сцены, и она оказывается на экране */
+      var hide=function(q){document.querySelectorAll(q).forEach(function(e){e.style.display='none'})};
+      if(only!=='hero')hide('.hero,header.top');if(only==='rest')hide('#scene');
+      ScrollTrigger.refresh();
+    }
+  });
+  return function(){/* revert при смене режима */};
+});
+addEventListener('load',function(){ScrollTrigger.refresh()});
 })();
 </script>
 </body>
