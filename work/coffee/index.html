@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ember Roasters — концепт сайта</title>
+<style>
+:root{--b:#17110d;--c:#f3e9dc;--a:#d98a3d}
+*{box-sizing:border-box;margin:0}
+body{font-family:'Helvetica Neue',Arial,sans-serif;background:var(--b);color:var(--c)}
+nav{display:flex;justify-content:space-between;padding:28px 6vw;font-size:14px;letter-spacing:.15em;text-transform:uppercase}
+nav b{letter-spacing:.4em}
+.hero{padding:9vh 6vw 14vh;background:linear-gradient(90deg,#17110dee 35%,#17110d66),url(img/coffee-hero.jpg) center/cover}
+.pic{width:100%;height:420px;object-fit:cover;display:block}
+.hero h1{font-size:clamp(54px,12vw,170px);line-height:.9;font-weight:300;letter-spacing:-.03em}
+.hero h1 i{color:var(--a);font-family:Georgia,serif}
+.hero p{max-width:44ch;margin:40px 0;opacity:.7;line-height:1.7;font-size:18px}
+.btn{border:1px solid var(--a);color:var(--a);padding:16px 36px;text-decoration:none;text-transform:uppercase;letter-spacing:.2em;font-size:13px;transition:.25s}
+.btn:hover{background:var(--a);color:var(--b)}
+.lots{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));border-top:1px solid #fff2}
+.lot{padding:46px 6vw;border-right:1px solid #fff2;border-bottom:1px solid #fff2;transition:.3s}
+.lot:hover{background:#221914}
+.lot small{color:var(--a);letter-spacing:.2em;text-transform:uppercase;font-size:12px}
+.lot h3{font-size:30px;font-weight:300;margin:14px 0}
+.lot p{opacity:.6;line-height:1.6;font-size:15px}
+.lot div{margin-top:26px;display:flex;justify-content:space-between;align-items:center}
+.lot button{background:0;border:1px solid #fff4;color:var(--c);padding:10px 20px;cursor:pointer}
+.lot button:hover{border-color:var(--a);color:var(--a)}
+.sub{display:grid;grid-template-columns:1fr 1fr;gap:60px;padding:120px 6vw;align-items:center}
+.sub h2{font-size:clamp(34px,5vw,64px);font-weight:300;line-height:1.1}
+.sub ul{list-style:none;padding:0;font-size:18px}.sub li{padding:22px 0;border-bottom:1px solid #fff2;display:flex;justify-content:space-between}
+.sub li span{color:var(--a)}
+footer{padding:40px 6vw;font-size:13px;opacity:.5}footer em{display:block;margin-top:8px;font-style:normal}
+@media(max-width:800px){.sub{grid-template-columns:1fr}}
+</style></head><body>
+<nav><b>Ember</b><span>Кофе · Подписка · О нас</span></nav>
+<div class="hero"><h1>Обжарка<br>с <i>характером</i></h1><p>Небольшие партии зерна из лучших хозяйств. Обжариваем в день заказа и привозим за два дня.</p><a class="btn" href="#l">Выбрать кофе</a></div>
+<div class="lots" id="l"></div>
+<img class="pic" src="img/coffee-brew.jpg" alt="Заваривание кофе в воронке">
+<div class="sub"><div><img src="img/bag.jpg" alt="Пакет кофе" style="width:100%;max-width:420px;display:block;margin-bottom:40px"><h2>Свежий кофе по подписке — каждые две недели</h2></div><ul><li>Эспрессо-набор <span>от 1 290 ₽</span></li><li>Фильтр-набор <span>от 1 390 ₽</span></li><li>Дегустационный сет <span>от 1 890 ₽</span></li></ul></div>
+<footer>© Ember Roasters — вымышленный бренд, демо-страница<em>Концепт сайта</em></footer>
+<script>
+[["Эфиопия","Иргачефф","Жасмин, бергамот, персик","890 ₽"],["Колумбия","Уила","Карамель, красное яблоко","790 ₽"],["Кения","Ньери","Чёрная смородина, цитрус","950 ₽"],["Бразилия","Серраду","Орех, шоколад, мёд","690 ₽"]]
+.forEach(function(c){document.getElementById('l').insertAdjacentHTML('beforeend','<div class="lot"><small>'+c[0]+'</small><h3>'+c[1]+'</h3><p>'+c[2]+'</p><div><b>'+c[3]+'</b><button>В корзину</button></div></div>')});
+</script></body></html>

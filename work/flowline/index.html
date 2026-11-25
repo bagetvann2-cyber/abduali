@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Flowline — студия йоги</title>
+<style>
+:root{--p:#e9d8f2;--v:#5b3a8c;--s:#fff8f2;--k:#2a1f3d}
+*{box-sizing:border-box;margin:0}
+body{font-family:system-ui,Arial,sans-serif;background:var(--s);color:var(--k)}
+nav{display:flex;justify-content:space-between;align-items:center;padding:22px 6vw}
+nav b{font-size:22px;color:var(--v)}nav a{color:var(--k);text-decoration:none;margin-left:26px;font-size:15px}
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;padding:60px 6vw 100px}
+.hero h1{font-size:clamp(38px,6vw,80px);line-height:1.02;font-weight:700}
+.hero h1 span{color:var(--v)}
+.hero p{margin:22px 0 32px;font-size:19px;line-height:1.6;opacity:.7;max-width:42ch}
+.btn{background:var(--v);color:#fff;padding:17px 36px;border-radius:40px;text-decoration:none;font-weight:600;display:inline-block}
+.blob{aspect-ratio:1;background:linear-gradient(135deg,#c9a7e6,#f6c9c0);border-radius:42% 58% 63% 37%/45% 40% 60% 55%;animation:m 9s ease-in-out infinite}
+@keyframes m{50%{border-radius:60% 40% 38% 62%/58% 62% 38% 42%}}
+section{padding:90px 6vw}h2{font-size:clamp(28px,4vw,46px);margin-bottom:44px}
+.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
+.c{background:var(--p);border-radius:26px;padding:34px}.c h3{font-size:22px;margin-bottom:10px}.c p{opacity:.7;line-height:1.6;font-size:15px}
+.t{background:var(--k);color:#fff;border-radius:30px;margin:0 6vw}
+.t table{width:100%;border-collapse:collapse}.t td{padding:18px 0;border-bottom:1px solid #fff2;font-size:17px}.t td:last-child{text-align:right;color:#d6bff0}
+.pr{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
+.pr .c{background:#fff;border:2px solid var(--p);text-align:center}.pr .big{font-size:40px;font-weight:700;color:var(--v);margin:12px 0}
+form{display:flex;gap:12px;flex-wrap:wrap}form input{flex:1;min-width:200px;padding:16px 22px;border-radius:40px;border:2px solid var(--p);font-size:16px}
+form button{background:var(--v);color:#fff;border:0;padding:16px 34px;border-radius:40px;font-weight:600;cursor:pointer;font-size:16px}
+footer{padding:40px 6vw;font-size:13px;opacity:.55}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+@media(max-width:800px){.hero,.two{grid-template-columns:1fr}.blob{max-width:300px}}
+</style></head><body>
+<nav><b>flowline</b><div><a href="#s">Расписание</a><a href="#p">Цены</a><a href="#z">Запись</a></div></nav>
+<div class="hero"><div><h1>Йога, после которой <span>хочется жить</span></h1><p>Небольшие группы, мягкие практики и преподаватели, которые следят за вашей техникой.</p><a class="btn" href="#z">Первое занятие — бесплатно</a></div><img src="img/hero.jpg" alt="Студия йоги" style="width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:42% 58% 63% 37%/45% 40% 60% 55%;animation:m 9s ease-in-out infinite"></div>
+<section class="two"><img src="img/class.jpg" alt="Групповое занятие" style="width:100%;border-radius:30px;aspect-ratio:4/3;object-fit:cover"><div><h2 style="margin-bottom:20px">Небольшие группы до 10 человек</h2><p style="font-size:18px;line-height:1.7;opacity:.7">Преподаватель следит за техникой каждого и подбирает нагрузку под ваш уровень.</p></div></section>
+<section><h2>Направления</h2><div class="g"><div class="c"><h3>Хатха</h3><p>Спокойный темп, база для новичков.</p></div><div class="c"><h3>Виньяса</h3><p>Динамика и дыхание, больше нагрузки.</p></div><div class="c"><h3>Инь-йога</h3><p>Долгие растяжки для восстановления.</p></div><div class="c"><h3>Для спины</h3><p>Профилактика болей при сидячей работе.</p></div></div></section>
+<div class="t" id="s" style="padding:50px 5vw"><h2 style="margin-bottom:20px">Расписание на неделю</h2><table><tr><td>Пн · 08:00</td><td>Виньяса</td></tr><tr><td>Вт · 19:30</td><td>Хатха</td></tr><tr><td>Ср · 20:00</td><td>Инь-йога</td></tr><tr><td>Чт · 08:00</td><td>Для спины</td></tr><tr><td>Сб · 11:00</td><td>Виньяса</td></tr></table></div>
+<section id="p"><h2>Абонементы</h2><div class="pr"><div class="c"><h3>Разовое</h3><div class="big">900 ₽</div><p>Одно занятие</p></div><div class="c"><h3>8 занятий</h3><div class="big">5 600 ₽</div><p>Действует 5 недель</p></div><div class="c"><h3>Безлимит</h3><div class="big">8 900 ₽</div><p>Месяц без ограничений</p></div></div></section>
+<section class="two"><div><h2 style="margin-bottom:20px">Пространство, где хочется остаться</h2><p style="font-size:18px;line-height:1.7;opacity:.7">Чай после практики, мягкий свет и никакой суеты: мы заботимся о деталях.</p></div><img src="img/detail.jpg" alt="Детали студии" style="width:100%;border-radius:30px;aspect-ratio:4/3;object-fit:cover"></section>
+<section id="z" style="background:var(--p)"><h2>Записаться на пробное</h2><form onsubmit="event.preventDefault();this.innerHTML='<b>Спасибо! Мы свяжемся с вами.</b>'"><input placeholder="Ваше имя" required><input placeholder="Телефон" required><button>Записаться</button></form></section>
+<footer>© Flowline — демо-страница, бренд вымышлен</footer>
+</body></html>

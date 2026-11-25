@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nordhaus — ремонт и дизайн интерьера</title>
+<style>
+:root{--w:#f4f2ee;--k:#1b1b1b;--a:#b08d57}
+*{box-sizing:border-box;margin:0}
+body{font-family:'Helvetica Neue',Arial,sans-serif;background:var(--w);color:var(--k)}
+nav{display:flex;justify-content:space-between;padding:26px 6vw;font-size:14px;letter-spacing:.12em;text-transform:uppercase}
+nav b{letter-spacing:.35em}
+.hero{padding:6vh 6vw 10vh;display:grid;grid-template-columns:1.1fr 1fr;gap:50px;align-items:end}
+.hero h1{font-size:clamp(42px,7vw,100px);font-weight:300;line-height:.98;letter-spacing:-.02em}
+.hero h1 i{font-family:Georgia,serif;color:var(--a)}
+.hero p{margin:28px 0;font-size:18px;line-height:1.6;opacity:.65;max-width:40ch}
+.btn{display:inline-block;background:var(--k);color:#fff;padding:17px 38px;text-decoration:none;text-transform:uppercase;letter-spacing:.15em;font-size:12px}
+.img{aspect-ratio:.85;background:linear-gradient(160deg,#d9d2c5,#9c8f7a);position:relative}
+.img:after{content:"";position:absolute;left:12%;right:12%;bottom:0;height:46%;background:#e8e2d6;box-shadow:0 0 0 14px #cfc7b8 inset}
+.nums{display:flex;gap:6vw;padding:50px 6vw;border-top:1px solid #0002;border-bottom:1px solid #0002;flex-wrap:wrap}
+.nums b{display:block;font-size:48px;font-weight:300}.nums span{font-size:13px;opacity:.55;text-transform:uppercase;letter-spacing:.1em}
+section{padding:100px 6vw}h2{font-size:clamp(30px,4vw,54px);font-weight:300;margin-bottom:50px}
+.st{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:34px}
+.st div{border-top:2px solid var(--k);padding-top:22px}.st small{color:var(--a);letter-spacing:.15em}.st h3{font-weight:400;font-size:22px;margin:10px 0}.st p{opacity:.6;line-height:1.6;font-size:15px}
+.pk{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2px;background:#0002}
+.pk div{background:var(--w);padding:44px}.pk h3{font-weight:400;font-size:26px}.pk .p{font-size:34px;margin:16px 0;color:var(--a)}.pk p{opacity:.6;line-height:1.7;font-size:15px}
+.cta{background:var(--k);color:#fff}.cta h2{margin-bottom:30px}
+.cta form{display:flex;gap:12px;flex-wrap:wrap}.cta input{flex:1;min-width:200px;padding:16px;background:0;border:1px solid #fff5;color:#fff;font-size:16px}
+.cta button{background:var(--a);border:0;padding:16px 40px;text-transform:uppercase;letter-spacing:.15em;font-size:12px;cursor:pointer}
+footer{padding:36px 6vw;font-size:13px;opacity:.5}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}.two img{width:100%;aspect-ratio:4/3;object-fit:cover}
+@media(max-width:800px){.hero,.two{grid-template-columns:1fr}nav{flex-direction:column;gap:10px;font-size:12px}.pk .p{font-size:26px}.pk div{padding:34px 28px}.nums{gap:30px}}
+</style></head><body>
+<nav><b>Nordhaus</b><span>Услуги · Тарифы · Контакты</span></nav>
+<div class="hero"><div><h1>Ремонт, который <i>не нужно</i> переделывать</h1><p>Дизайн-проект, смета и ремонт под ключ — один договор, фиксированная цена, график по неделям.</p><a class="btn" href="#c">Рассчитать стоимость</a></div><div class="img"><img src="img/hero.jpg" alt="Интерьер гостиной" style="width:100%;height:100%;object-fit:cover;display:block;position:relative;z-index:1"></div></div>
+<div class="nums"><div><b>12</b><span>лет на рынке</span></div><div><b>340+</b><span>квартир сдано</span></div><div><b>5 лет</b><span>гарантия</span></div></div>
+<section><h2>Как мы работаем</h2><div class="st"><div><small>01</small><h3>Замеры и смета</h3><p>Выезжаем бесплатно и называем цену до подписания договора.</p></div><div><small>02</small><h3>Дизайн-проект</h3><p>Планировки, 3D-визуализации, спецификация материалов.</p></div><div><small>03</small><h3>Ремонт</h3><p>Прораб на связи, фотоотчёты каждую неделю.</p></div><div><small>04</small><h3>Сдача</h3><p>Акт, клининг и гарантийное обслуживание.</p></div></div></section>
+<section class="two"><img src="img/kitchen.jpg" alt="Кухня после ремонта"><div><h2 style="margin-bottom:20px">Результат, который можно потрогать</h2><p style="font-size:18px;line-height:1.7;opacity:.65">Каждый объект сопровождаем фотоотчётом, а после сдачи остаёмся на связи по гарантии.</p></div></section>
+<section class="two" style="padding-top:0"><div><h2 style="margin-bottom:20px">Спальни, в которых хочется просыпаться</h2><p style="font-size:18px;line-height:1.7;opacity:.65">Подбираем свет, материалы и мебель под ваш ритм жизни, а не под каталог.</p></div><img src="img/bedroom.jpg" alt="Спальня после ремонта"></section>
+<section style="padding-top:0"><h2>Пакеты</h2><div class="pk"><div><h3>Косметика</h3><div class="p">от 8 000 ₽/м²</div><p>Обновление отделки без переделки коммуникаций.</p></div><div><h3>Капитальный</h3><div class="p">от 15 000 ₽/м²</div><p>Замена коммуникаций, стяжка, полная отделка.</p></div><div><h3>Под ключ</h3><div class="p">от 22 000 ₽/м²</div><p>Дизайн, ремонт, мебель и декор.</p></div></div></section>
+<section class="cta" id="c"><h2>Узнайте стоимость за 1 день</h2><form onsubmit="event.preventDefault();this.innerHTML='<b>Заявка принята.</b>'"><input placeholder="Имя" required><input placeholder="Телефон" required><input placeholder="Площадь, м²"><button>Отправить</button></form></section>
+<footer>© Nordhaus — демо-страница, бренд вымышлен</footer>
+</body></html>
