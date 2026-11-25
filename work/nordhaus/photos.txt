@@ -1,0 +1,6 @@
+файл	размер	автор	лицензия	источник (Wikimedia Commons)
+img/site-1.jpg	кадр 900x600 из оригинала 1920x1080 (кадрировано)	Donald Trung	CC BY-SA 4.0	https://commons.wikimedia.org/wiki/File:Onze_Woning_apartment_renovation%2C_Hillegersberg%2C_Rotterdam_%282020%29_20.jpg
+img/site-2.jpg	кадр 700x726 из оригинала 1920x1080 (кадрировано, без росписи на стене)	Donald Trung	CC BY-SA 4.0	https://commons.wikimedia.org/wiki/File:Onze_Woning_apartment_renovation%2C_Hillegersberg%2C_Rotterdam_%282020%29_50.jpg
+img/render-kitchen.jpg	кадрировано: без окон	визуализация, сгенерирована нейросетью для концепта; подпись «визуализация проекта»
+img/render-bedroom.jpg	кадрировано: без окна и картины с пейзажем	визуализация, сгенерирована нейросетью для концепта; подпись «визуализация проекта»
+(render-living.jpg удалён: вид на озеро в окне)

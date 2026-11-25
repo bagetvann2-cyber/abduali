@@ -1,40 +1,421 @@
 <!doctype html>
-<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Nordhaus — ремонт и дизайн интерьера</title>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nordhaus — ремонт квартир в Астане, смета в договоре</title>
+<meta name="description" content="Ремонт квартир в Астане от 22 000 ₸ за м². Посчитайте смету онлайн: цена и срок фиксируются в договоре после бесплатного замера.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;600;800&display=swap" rel="stylesheet">
 <style>
-:root{--w:#f4f2ee;--k:#1b1b1b;--a:#b08d57}
-*{box-sizing:border-box;margin:0}
-body{font-family:'Helvetica Neue',Arial,sans-serif;background:var(--w);color:var(--k)}
-nav{display:flex;justify-content:space-between;padding:26px 6vw;font-size:14px;letter-spacing:.12em;text-transform:uppercase}
-nav b{letter-spacing:.35em}
-.hero{padding:6vh 6vw 10vh;display:grid;grid-template-columns:1.1fr 1fr;gap:50px;align-items:end}
-.hero h1{font-size:clamp(42px,7vw,100px);font-weight:300;line-height:.98;letter-spacing:-.02em}
-.hero h1 i{font-family:Georgia,serif;color:var(--a)}
-.hero p{margin:28px 0;font-size:18px;line-height:1.6;opacity:.65;max-width:40ch}
-.btn{display:inline-block;background:var(--k);color:#fff;padding:17px 38px;text-decoration:none;text-transform:uppercase;letter-spacing:.15em;font-size:12px}
-.img{aspect-ratio:.85;background:linear-gradient(160deg,#d9d2c5,#9c8f7a);position:relative}
-.img:after{content:"";position:absolute;left:12%;right:12%;bottom:0;height:46%;background:#e8e2d6;box-shadow:0 0 0 14px #cfc7b8 inset}
-.nums{display:flex;gap:6vw;padding:50px 6vw;border-top:1px solid #0002;border-bottom:1px solid #0002;flex-wrap:wrap}
-.nums b{display:block;font-size:48px;font-weight:300}.nums span{font-size:13px;opacity:.55;text-transform:uppercase;letter-spacing:.1em}
-section{padding:100px 6vw}h2{font-size:clamp(30px,4vw,54px);font-weight:300;margin-bottom:50px}
-.st{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:34px}
-.st div{border-top:2px solid var(--k);padding-top:22px}.st small{color:var(--a);letter-spacing:.15em}.st h3{font-weight:400;font-size:22px;margin:10px 0}.st p{opacity:.6;line-height:1.6;font-size:15px}
-.pk{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2px;background:#0002}
-.pk div{background:var(--w);padding:44px}.pk h3{font-weight:400;font-size:26px}.pk .p{font-size:34px;margin:16px 0;color:var(--a)}.pk p{opacity:.6;line-height:1.7;font-size:15px}
-.cta{background:var(--k);color:#fff}.cta h2{margin-bottom:30px}
-.cta form{display:flex;gap:12px;flex-wrap:wrap}.cta input{flex:1;min-width:200px;padding:16px;background:0;border:1px solid #fff5;color:#fff;font-size:16px}
-.cta button{background:var(--a);border:0;padding:16px 40px;text-transform:uppercase;letter-spacing:.15em;font-size:12px;cursor:pointer}
-footer{padding:36px 6vw;font-size:13px;opacity:.5}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}.two img{width:100%;aspect-ratio:4/3;object-fit:cover}
-@media(max-width:800px){.hero,.two{grid-template-columns:1fr}nav{flex-direction:column;gap:10px;font-size:12px}.pk .p{font-size:26px}.pk div{padding:34px 28px}.nums{gap:30px}}
-</style></head><body>
-<nav><b>Nordhaus</b><span>Услуги · Тарифы · Контакты</span></nav>
-<div class="hero"><div><h1>Ремонт, который <i>не нужно</i> переделывать</h1><p>Дизайн-проект, смета и ремонт под ключ — один договор, фиксированная цена, график по неделям.</p><a class="btn" href="#c">Рассчитать стоимость</a></div><div class="img"><img src="img/hero.jpg" alt="Интерьер гостиной" style="width:100%;height:100%;object-fit:cover;display:block;position:relative;z-index:1"></div></div>
-<div class="nums"><div><b>12</b><span>лет на рынке</span></div><div><b>340+</b><span>квартир сдано</span></div><div><b>5 лет</b><span>гарантия</span></div></div>
-<section><h2>Как мы работаем</h2><div class="st"><div><small>01</small><h3>Замеры и смета</h3><p>Выезжаем бесплатно и называем цену до подписания договора.</p></div><div><small>02</small><h3>Дизайн-проект</h3><p>Планировки, 3D-визуализации, спецификация материалов.</p></div><div><small>03</small><h3>Ремонт</h3><p>Прораб на связи, фотоотчёты каждую неделю.</p></div><div><small>04</small><h3>Сдача</h3><p>Акт, клининг и гарантийное обслуживание.</p></div></div></section>
-<section class="two"><img src="img/kitchen.jpg" alt="Кухня после ремонта"><div><h2 style="margin-bottom:20px">Результат, который можно потрогать</h2><p style="font-size:18px;line-height:1.7;opacity:.65">Каждый объект сопровождаем фотоотчётом, а после сдачи остаёмся на связи по гарантии.</p></div></section>
-<section class="two" style="padding-top:0"><div><h2 style="margin-bottom:20px">Спальни, в которых хочется просыпаться</h2><p style="font-size:18px;line-height:1.7;opacity:.65">Подбираем свет, материалы и мебель под ваш ритм жизни, а не под каталог.</p></div><img src="img/bedroom.jpg" alt="Спальня после ремонта"></section>
-<section style="padding-top:0"><h2>Пакеты</h2><div class="pk"><div><h3>Косметика</h3><div class="p">от 8 000 ₽/м²</div><p>Обновление отделки без переделки коммуникаций.</p></div><div><h3>Капитальный</h3><div class="p">от 15 000 ₽/м²</div><p>Замена коммуникаций, стяжка, полная отделка.</p></div><div><h3>Под ключ</h3><div class="p">от 22 000 ₽/м²</div><p>Дизайн, ремонт, мебель и декор.</p></div></div></section>
-<section class="cta" id="c"><h2>Узнайте стоимость за 1 день</h2><form onsubmit="event.preventDefault();this.innerHTML='<b>Заявка принята.</b>'"><input placeholder="Имя" required><input placeholder="Телефон" required><input placeholder="Площадь, м²"><button>Отправить</button></form></section>
-<footer>© Nordhaus — демо-страница, бренд вымышлен</footer>
-</body></html>
+:root{
+  --paper:#fefefd;
+  --ink:#24272c;
+  --muted:#575c64;
+  --rule:#d8d9dc;
+  --pencil:#1a4db3;
+  --pencil-soft:#e8eefb;
+  --font:'Commissioner',system-ui,'Segoe UI',sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.55 var(--font);font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%}
+a{color:var(--pencil)}
+:focus-visible{outline:3px solid var(--pencil);outline-offset:2px}
+.wrap{max-width:1280px;margin:0 auto;padding:0 24px}
+button{font:inherit;color:inherit;cursor:pointer}
+
+/* header */
+.top{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-weight:800;font-size:22px;letter-spacing:-.01em;color:var(--ink);text-decoration:none}
+.top nav{display:flex;gap:24px;align-items:center}
+.top nav a{color:var(--ink);text-decoration:none;font-weight:500;min-height:44px;display:inline-flex;align-items:center}
+.top nav a:hover{color:var(--pencil)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;background:var(--pencil);color:#fff;border:0;border-radius:4px;font-weight:600;text-decoration:none}
+.btn:hover{background:#143d91}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,400px) minmax(0,1fr);gap:56px;padding:20px 0 56px;align-items:start}
+h1{font-weight:800;font-size:40px;line-height:1.1;letter-spacing:-.02em;margin:0 0 16px}
+.lead{color:var(--muted);margin:0 0 24px}
+.facts{list-style:none;margin:0;padding:0;border-top:1.5px solid var(--ink)}
+.facts li{padding:12px 0;border-bottom:1px solid var(--rule);font-size:16px}
+.facts b{font-weight:600}
+
+/* calculator */
+.calc{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,360px);border:1.5px solid var(--ink);background:#fff}
+.controls{padding:22px 24px;border-right:1.5px solid var(--ink);display:grid;gap:18px;align-content:start}
+fieldset{border:0;margin:0;padding:0;min-width:0}
+legend,.lbl{font-weight:600;font-size:15px;padding:0;margin-bottom:6px;display:block}
+.lbl small{font-weight:400;color:var(--muted)}
+.area-row{display:flex;align-items:baseline;justify-content:space-between}
+.area-val{font-weight:800;font-size:30px;line-height:1}
+.area-val small{font-size:16px;font-weight:500;color:var(--muted)}
+
+/* ruler slider */
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:44px;background:transparent;margin:0;cursor:pointer}
+input[type=range]::-webkit-slider-runnable-track{height:22px;background:repeating-linear-gradient(90deg,var(--ink) 0 1.5px,transparent 1.5px calc(100%/18)) bottom/100% 55% no-repeat,linear-gradient(var(--ink),var(--ink)) bottom/100% 1.5px no-repeat}
+input[type=range]::-moz-range-track{height:22px;background:repeating-linear-gradient(90deg,var(--ink) 0 1.5px,transparent 1.5px calc(100%/18)) bottom/100% 55% no-repeat,linear-gradient(var(--ink),var(--ink)) bottom/100% 1.5px no-repeat}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:10px;height:38px;margin-top:-8px;background:var(--pencil);border:0;border-radius:2px}
+input[type=range]::-moz-range-thumb{width:10px;height:38px;background:var(--pencil);border:0;border-radius:2px}
+.scale{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);margin-top:-6px}
+
+/* segmented radios */
+.seg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1.5px solid var(--ink)}
+.seg label{position:relative;display:flex;flex-direction:column;justify-content:center;min-height:56px;padding:6px 10px;cursor:pointer;border-right:1.5px solid var(--ink);line-height:1.25}
+.seg label:last-child{border-right:0}
+.seg input{position:absolute;opacity:0;inset:0;cursor:pointer;margin:0}
+.seg span{font-weight:600;font-size:15px}
+.seg em{font-style:normal;font-size:13px;color:var(--muted)}
+.seg label:has(input:checked){background:var(--pencil);color:#fff}
+.seg label:has(input:checked) em{color:#dbe5fa}
+.seg label:has(input:focus-visible){outline:3px solid var(--pencil);outline-offset:2px}
+.hint{font-size:14px;color:var(--muted);margin:6px 0 0}
+
+.chk{display:flex;align-items:center;gap:12px;min-height:44px;cursor:pointer}
+.chk input{width:22px;height:22px;accent-color:var(--pencil);margin:0;flex:none}
+.chk small{color:var(--muted)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.step{display:flex;align-items:center;border:1.5px solid var(--ink);width:max-content}
+.step button{width:44px;height:44px;border:0;background:#fff;font-size:22px;line-height:1}
+.step button:hover{background:var(--pencil-soft)}
+.step output{min-width:44px;text-align:center;font-weight:600;font-size:18px}
+
+/* estimate sheet */
+.sheet{padding:22px 24px;display:flex;flex-direction:column}
+.sheet h2{margin:0 0 10px 12px;font-size:17px;font-weight:600}
+.lines{list-style:none;margin:0 0 0 12px;padding:0;font-size:15px}
+.lines li{display:grid;grid-template-columns:1fr auto;column-gap:10px;padding:7px 0;border-bottom:1px dotted #9a9da3;line-height:1.3}
+.lines .d{display:block;color:var(--muted);font-size:13px}
+.lines .minus{color:var(--pencil)}
+.total{margin:14px 0 0 12px;border-top:1.5px solid var(--ink);padding-top:10px}
+.total .k{font-size:14px;color:var(--muted)}
+.total .sum{font-weight:800;font-size:44px;line-height:1.05;letter-spacing:-.02em;display:inline-block;position:relative;padding-bottom:6px}
+.total .sum::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:var(--pencil);transform-origin:left;animation:draw .5s ease-out}
+.total .sum.redraw::after{animation:none}
+@keyframes draw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.weeks{margin:8px 0 0 12px;font-weight:600}
+.note{margin:6px 0 16px 12px;font-size:13px;color:var(--muted);line-height:1.4}
+.sheet .btn{margin-left:12px;margin-top:auto}
+
+/* sections */
+section{padding:56px 0;border-top:1.5px solid var(--ink)}
+h2.sec{font-weight:800;font-size:30px;line-height:1.15;letter-spacing:-.015em;margin:0 0 8px}
+.cols{display:grid;grid-template-columns:minmax(0,400px) minmax(0,1fr);gap:56px}
+.cols p{margin:0;color:var(--muted)}
+ol.steps{list-style:none;margin:0;padding:0;counter-reset:s}
+ol.steps li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:4px 12px;padding:16px 0;border-bottom:1px solid var(--rule)}
+ol.steps li:first-child{padding-top:0}
+ol.steps li::before{content:counter(s);font-weight:800;font-size:22px;color:var(--pencil);grid-row:span 2}
+ol.steps b{font-weight:600}
+ol.steps span{color:var(--muted)}
+dl.terms{margin:0}
+dl.terms div{display:grid;grid-template-columns:200px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--rule)}
+dl.terms div:first-child{padding-top:0}
+dl.terms dt{font-weight:600}
+dl.terms dd{margin:0;color:var(--muted)}
+
+.report{display:grid;grid-template-columns:auto auto 1fr;gap:20px;align-items:end}
+figure{margin:0}
+figcaption{font-size:14px;color:var(--muted);margin-top:6px}
+.report img{height:220px;width:auto;object-fit:cover;border-radius:2px}
+.msg{align-self:center;max-width:340px;background:#e6f2dc;color:#1c2a14;padding:12px 14px;border-radius:12px 12px 12px 2px;font-size:15px;line-height:1.4}
+.msg small{display:block;margin-top:6px;color:#4a5a3f;font-size:12px}
+.renders{display:grid;grid-template-columns:1fr 1.5fr;gap:20px;margin-top:32px}
+.renders img{width:100%;height:360px;object-fit:cover;border-radius:2px}
+
+footer{border-top:1.5px solid var(--ink);padding:28px 0 40px;font-size:14px;color:var(--muted)}
+footer p{margin:0 0 6px;max-width:80ch}
+
+/* dialog */
+dialog{border:1.5px solid var(--ink);padding:0;width:min(440px,calc(100vw - 32px));background:#fff;color:var(--ink)}
+dialog::backdrop{background:rgba(36,39,44,.55)}
+.dlg{padding:24px}
+.dlg[hidden]{display:none}
+.dlg h3{margin:0 0 4px;font-size:22px;font-weight:800;padding-right:36px}
+.dlg p{margin:0 0 16px;color:var(--muted);font-size:15px}
+.dlg label{display:block;font-weight:600;font-size:15px;margin-bottom:12px}
+.dlg input[type=text],.dlg input[type=tel]{display:block;width:100%;height:48px;margin-top:4px;padding:0 12px;border:1.5px solid var(--ink);border-radius:0;font:inherit;background:#fff;color:var(--ink)}
+.dlg .row{display:flex;gap:12px;margin-top:8px;flex-wrap:wrap}
+.dlg p.bubble{background:#e6f2dc;color:#1c2a14;border-radius:12px 12px 12px 2px;padding:12px 14px;font-size:15px;line-height:1.45;margin:0 0 12px;white-space:pre-line}
+.dlg p.demo{font-size:14px;color:var(--muted);margin:0 0 16px;font-weight:600}
+.xclose{position:absolute;top:8px;right:8px;width:44px;height:44px;border:0;background:transparent;font-size:26px;line-height:1}
+
+@media (min-width:1101px) and (max-width:1500px){
+  .seg{grid-template-columns:1fr}
+  .seg label{border-right:0;border-bottom:1.5px solid var(--ink);min-height:48px}
+  .seg label:last-child{border-bottom:0}
+}
+@media (max-width:1100px){
+  .hero{grid-template-columns:1fr;gap:28px}
+  .calc{grid-template-columns:1fr}
+  .controls{border-right:0;border-bottom:1.5px solid var(--ink)}
+  .cols{grid-template-columns:1fr;gap:24px}
+  .report{grid-template-columns:auto auto}
+  .msg{grid-column:1/-1}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .wrap{padding:0 16px}
+  h1{font-size:30px}
+  .top nav a{display:none}
+  .controls,.sheet{padding:18px 16px}
+  .total .sum{font-size:36px}
+  .seg{grid-template-columns:1fr}
+  .seg label{border-right:0;border-bottom:1.5px solid var(--ink);min-height:48px}
+  .seg label:last-child{border-bottom:0}
+  .two{grid-template-columns:1fr}
+  dl.terms div{grid-template-columns:1fr;gap:2px}
+  .report{grid-template-columns:1fr 1fr;gap:12px}
+  .report img{height:auto;width:100%;aspect-ratio:1/1}
+  .renders{grid-template-columns:1fr}
+  .renders img{height:260px}
+  section{padding:40px 0}
+}
+@media (prefers-reduced-motion:reduce){
+  .total .sum::after{animation:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="logo" href="#top">Nordhaus</a>
+    <nav>
+      <a href="#etapy">Этапы</a>
+      <a href="#usloviya">Условия</a>
+      <a href="#fotootchet">Фотоотчёт</a>
+      <button class="btn" type="button" data-open>Заказать замер</button>
+    </nav>
+  </header>
+
+  <main id="top">
+    <div class="hero">
+      <div>
+        <h1>Ремонт квартир в Астане: работа от 22&nbsp;000&nbsp;₸ за&nbsp;м². Смета в договоре не растёт</h1>
+        <p class="lead">Передвиньте ползунок и выберите тип ремонта: цена и срок посчитаются сразу. Точную смету составит мастер на бесплатном замере.</p>
+        <ul class="facts">
+          <li><b>Срок:</b> от 2 недель, квартира 60 м² около 10 недель</li>
+          <li><b>Оплата:</b> по этапам, Kaspi (перевод или QR) и карта</li>
+          <li><b>Гарантия:</b> 2 года, фотоотчёт в WhatsApp</li>
+        </ul>
+      </div>
+
+      <div class="calc" id="calc">
+        <div class="controls">
+          <div>
+            <div class="area-row">
+              <label class="lbl" for="area">Площадь квартиры</label>
+              <div class="area-val"><span id="areaOut">60</span> <small>м²</small></div>
+            </div>
+            <input type="range" id="area" min="20" max="200" step="1" value="60">
+            <div class="scale"><span>20</span><span>110</span><span>200</span></div>
+          </div>
+
+          <fieldset>
+            <legend>Тип ремонта</legend>
+            <div class="seg">
+              <label><input type="radio" name="type" value="cosmetic"><span>Косметический</span><em>22 000 ₸/м²</em></label>
+              <label><input type="radio" name="type" value="capital" checked><span>Капитальный</span><em>45 000 ₸/м²</em></label>
+              <label><input type="radio" name="type" value="design"><span>Дизайнерский</span><em>70 000 ₸/м²</em></label>
+            </div>
+            <p class="hint" id="typeHint"></p>
+          </fieldset>
+
+
+          <div class="two">
+            <div>
+              <span class="lbl" id="bathLbl">Санузлов <small>+300 000 ₸ за каждый</small></span>
+              <div class="step" role="group" aria-labelledby="bathLbl">
+                <button type="button" data-step="baths" data-d="-1" aria-label="Меньше санузлов">−</button>
+                <output id="bathsOut">1</output>
+                <button type="button" data-step="baths" data-d="1" aria-label="Больше санузлов">+</button>
+              </div>
+            </div>
+            <div>
+              <span class="lbl" id="floorLbl">Тёплый пол, помещений <small>+45 000 ₸ за каждое</small></span>
+              <div class="step" role="group" aria-labelledby="floorLbl">
+                <button type="button" data-step="floors" data-d="-1" aria-label="Меньше помещений с тёплым полом">−</button>
+                <output id="floorsOut">0</output>
+                <button type="button" data-step="floors" data-d="1" aria-label="Больше помещений с тёплым полом">+</button>
+              </div>
+            </div>
+          </div>
+
+          <label class="chk"><input type="checkbox" id="demo"><span>Нужен демонтаж <small>(+3 000 ₸/м²)</small></span></label>
+        </div>
+
+        <div class="sheet" aria-live="polite">
+          <h2>Смета</h2>
+          <ul class="lines" id="lines"></ul>
+          <div class="total">
+            <div class="k">Итого</div>
+            <div class="sum" id="total">0 ₸</div>
+          </div>
+          <div class="weeks" id="weeks"></div>
+          <p class="note">Ориентировочно, цены за работу, материалы отдельно. Точная смета после бесплатного замера.</p>
+          <button class="btn" type="button" data-open>Заказать замер</button>
+        </div>
+      </div>
+    </div>
+
+    <section id="etapy">
+      <div class="cols">
+        <div>
+          <h2 class="sec">Пять этапов от замера до акта</h2>
+          <p>Каждый этап закрывается актом, следующий платёж только после него.</p>
+        </div>
+        <ol class="steps">
+          <li><b>Замер</b><span>Мастер приезжает бесплатно, мерит комнаты, смотрит стены и стояки. 1–2 часа.</span></li>
+          <li><b>Смета и договор</b><span>Смета по строкам с ценами и сроком вписывается в договор. Сумма фиксируется.</span></li>
+          <li><b>Черновые работы</b><span>Демонтаж, электрика, сантехника, стяжка, штукатурка. Фото каждого этапа в WhatsApp.</span></li>
+          <li><b>Чистовые работы</b><span>Шпаклёвка, покраска, полы, плитка, двери, установка сантехники.</span></li>
+          <li><b>Сдача по акту</b><span>Вместе проходим по квартире, исправляем замечания, подписываем акт. Гарантия 2 года.</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="usloviya">
+      <div class="cols">
+        <div>
+          <h2 class="sec">Условия в договоре</h2>
+          <p>Всё, что важно для денег, записано в договоре, а не в переписке.</p>
+        </div>
+        <dl class="terms">
+          <div><dt>Фиксированная смета</dt><dd>Цена не меняется по ходу работ. Если вы сами просите добавить работы, это отдельное допсоглашение с ценой до начала.</dd></div>
+          <div><dt>Оплата по этапам</dt><dd>Переводом на Kaspi, по Kaspi QR или картой. Платёж за этап после подписания акта по нему.</dd></div>
+          <div><dt>Гарантия 2 года</dt><dd>На выполненные работы. Недочёты устраняем за свой счёт.</dd></div>
+          <div><dt>Фотоотчёт в WhatsApp</dt><dd>Фото после каждого этапа и по запросу. Вы видите объект, даже если живёте в другом городе.</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section id="fotootchet">
+      <div class="cols">
+        <div>
+          <h2 class="sec">Фотоотчёт в WhatsApp</h2>
+          <p>Так выглядит отчёт: снимок скрытых работ и короткая подпись, что сделано и что дальше.</p>
+        </div>
+        <div class="report">
+          <figure><img src="img/site-1.jpg" width="330" height="220" alt="Стена из пеноблока со смонтированной трубой, на полу лопата, метла и стремянка"><figcaption>объект в работе</figcaption></figure>
+          <figure><img src="img/site-2.jpg" width="212" height="220" alt="Серый канализационный стояк у стены из блоков под потолочным светильником"><figcaption>объект в работе</figcaption></figure>
+          <div class="msg">Стояк заменён, собираем каркас под короб. Завтра стяжка пола, фото вечером.<small>пример подписи к фотоотчёту</small></div>
+        </div>
+      </div>
+      <div class="renders">
+        <figure><img src="img/render-kitchen.jpg" width="540" height="360" alt="Визуализация кухни с островом из светлого камня и дубовыми фасадами"><figcaption>визуализация проекта</figcaption></figure>
+        <figure><img src="img/render-bedroom.jpg" width="800" height="360" alt="Визуализация спальни с дубовой кроватью и льняным бельём"><figcaption>визуализация проекта</figcaption></figure>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Концепт сайта, бренд вымышленный. Сделал Абдуали.</p>
+    <p>Фото «объект в работе»: Donald Trung, лицензия <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>, кадрировано, источник: Wikimedia Commons, <a href="https://commons.wikimedia.org/wiki/File:Onze_Woning_apartment_renovation%2C_Hillegersberg%2C_Rotterdam_%282020%29_20.jpg">фото 1</a>, <a href="https://commons.wikimedia.org/wiki/File:Onze_Woning_apartment_renovation%2C_Hillegersberg%2C_Rotterdam_%282020%29_50.jpg">фото 2</a>. Визуализации интерьеров созданы нейросетью для концепта.</p>
+  </footer>
+</div>
+
+<dialog id="dlg" aria-labelledby="dlgTitle">
+  <button class="xclose" type="button" data-close aria-label="Закрыть">×</button>
+  <form class="dlg" id="form" method="dialog">
+    <h3 id="dlgTitle">Заказать замер</h3>
+    <p>Мастер приедет бесплатно. Оставьте имя и телефон, параметры расчёта добавим сами.</p>
+    <label>Имя<input type="text" name="name" autocomplete="name" required placeholder="Например, Айгерим"></label>
+    <label>Телефон<input type="tel" name="phone" autocomplete="tel" required inputmode="tel" pattern="[0-9+()\s\-]{10,}" placeholder="+7 7XX XXX XX XX"></label>
+    <div class="row"><button class="btn" type="submit">Отправить заявку</button></div>
+  </form>
+  <div class="dlg" id="result" hidden>
+    <h3>Так заявка придёт владельцу в WhatsApp</h3>
+    <p class="bubble" id="bubble"></p>
+    <p class="demo">Демо, ничего не отправлено.</p>
+    <div class="row"><button class="btn ghost" type="button" data-close>Закрыть</button></div>
+  </div>
+</dialog>
+
+<script>
+// calc:start
+function calc(p) {
+  const RATE = { cosmetic: 22000, capital: 45000, design: 70000 };
+  const NAME = { cosmetic: 'Косметический ремонт', capital: 'Капитальный ремонт', design: 'Дизайнерский ремонт' };
+  const WEEKS_PER_100M2 = { cosmetic: 6, capital: 14, design: 20 };
+  const lines = [];
+  const base = p.area * RATE[p.type];
+  lines.push({ label: NAME[p.type], detail: p.area + ' м² × ' + fmt(RATE[p.type]), sum: base });
+  if (p.type !== 'cosmetic') lines.push({ label: 'Электрика', detail: 'входит в ставку', sum: 0 });
+  if (p.demo) lines.push({ label: 'Демонтаж', detail: p.area + ' м² × ' + fmt(3000), sum: p.area * 3000 });
+  if (p.baths) lines.push({ label: 'Санузлы', detail: p.baths + ' × ' + fmt(300000), sum: p.baths * 300000 });
+  if (p.floors) lines.push({ label: 'Тёплый пол', detail: p.floors + ' × ' + fmt(45000), sum: p.floors * 45000 });
+  const total = lines.reduce((s, l) => s + l.sum, 0);
+  const weeks = Math.max(2, Math.ceil(p.area * WEEKS_PER_100M2[p.type] / 100) + p.baths + (p.demo ? 1 : 0) + (p.floors ? 1 : 0));
+  return { lines, total, weeks };
+}
+function fmt(n) {
+  return (n < 0 ? '−' : '') + String(Math.abs(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' ₸';
+}
+// calc:end
+
+const $ = id => document.getElementById(id);
+const state = { baths: 1, floors: 0 };
+const HINT = {
+  cosmetic: 'Покраска, обои, напольное покрытие. Электрика и сантехника не меняются.',
+  capital: 'Замена электрики, сантехники, стяжка, выравнивание стен. Электрика входит в цену.',
+  design: 'Ремонт по дизайн-проекту с авторским надзором. Электрика входит в цену.'
+};
+function params() {
+  return {
+    area: +$('area').value,
+    type: document.querySelector('input[name=type]:checked').value,
+    baths: state.baths, floors: state.floors,
+    demo: $('demo').checked
+  };
+}
+function weeksWord(n) {
+  const m = n % 10, h = n % 100;
+  return (m === 1 && h !== 11) ? 'неделя' : (m >= 2 && m <= 4 && (h < 12 || h > 14)) ? 'недели' : 'недель';
+}
+function render() {
+  const p = params(), r = calc(p);
+  $('areaOut').textContent = p.area;
+  $('bathsOut').textContent = p.baths;
+  $('floorsOut').textContent = p.floors;
+  $('typeHint').textContent = HINT[p.type];
+  $('lines').innerHTML = r.lines.map(l =>
+    '<li><span>' + l.label + '<span class="d">' + l.detail + '</span></span><span' + (l.sum < 0 ? ' class="minus"' : '') + '>' + (l.sum === 0 ? 'входит' : fmt(l.sum)) + '</span></li>').join('');
+  const t = $('total');
+  t.textContent = fmt(r.total);
+  $('weeks').textContent = 'Срок: около ' + r.weeks + ' ' + weeksWord(r.weeks);
+  return { p, r };
+}
+function summary() {
+  const { p, r } = render();
+  const names = { cosmetic: 'косметический', capital: 'капитальный', design: 'дизайнерский' };
+  return 'Параметры расчёта: ' + p.area + ' м², ' + names[p.type] + ' ремонт' +
+    ', санузлов ' + p.baths + ', демонтаж ' + (p.demo ? 'да' : 'нет') + ', тёплый пол ' + p.floors + ' пом. Ориентировочно ' + fmt(r.total) + ', около ' + r.weeks + ' ' + weeksWord(r.weeks) + '.';
+}
+document.addEventListener('input', e => { if (e.target.closest('#calc')) render(); });
+document.querySelectorAll('[data-step]').forEach(b => b.addEventListener('click', () => {
+  const k = b.dataset.step, max = k === 'baths' ? 6 : 10;
+  state[k] = Math.min(max, Math.max(0, state[k] + +b.dataset.d));
+  render();
+}));
+
+const dlg = $('dlg'), form = $('form'), result = $('result');
+document.querySelectorAll('[data-open]').forEach(b => b.addEventListener('click', () => {
+  form.hidden = false; result.hidden = true;
+  dlg.showModal();
+}));
+document.querySelectorAll('[data-close]').forEach(b => b.addEventListener('click', () => dlg.close()));
+dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  const d = new FormData(form);
+  $('bubble').textContent = 'Новая заявка с сайта Nordhaus\nИмя: ' + d.get('name') + '\nТелефон: ' + d.get('phone') + '\nХочет бесплатный замер.\n' + summary();
+  form.hidden = true; result.hidden = false;
+});
+render();
+</script>
+</body>
+</html>

@@ -1,0 +1,3 @@
+файл	происхождение	автор	лицензия	источник (Wikimedia Commons)
+img/band.jpg	верхняя часть кадра LRMC_Yoga_Class_(8727547).jpg (class-1 из исходников), без лиц	DVIDS (армия США)	Public domain	https://commons.wikimedia.org/wiki/File:LRMC_Yoga_Class_%288727547%29.jpg
+img/class-mats.jpg	нижняя часть кадра LRMC_Yoga_Class_(8727552).jpg (class-2 из исходников): коврик, блок, полотенца, без людей	DVIDS (армия США)	Public domain	https://commons.wikimedia.org/wiki/File:LRMC_Yoga_Class_%288727552%29.jpg

@@ -1,39 +1,357 @@
 <!doctype html>
-<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Flowline — студия йоги</title>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flowline, студия йоги в Астане</title>
+<meta name="description" content="Расписание студии йоги Flowline в Астане: 20 занятий в неделю, 6 для новичков. Запись онлайн.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&family=Spectral:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--p:#e9d8f2;--v:#5b3a8c;--s:#fff8f2;--k:#2a1f3d}
-*{box-sizing:border-box;margin:0}
-body{font-family:system-ui,Arial,sans-serif;background:var(--s);color:var(--k)}
-nav{display:flex;justify-content:space-between;align-items:center;padding:22px 6vw}
-nav b{font-size:22px;color:var(--v)}nav a{color:var(--k);text-decoration:none;margin-left:26px;font-size:15px}
-.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;padding:60px 6vw 100px}
-.hero h1{font-size:clamp(38px,6vw,80px);line-height:1.02;font-weight:700}
-.hero h1 span{color:var(--v)}
-.hero p{margin:22px 0 32px;font-size:19px;line-height:1.6;opacity:.7;max-width:42ch}
-.btn{background:var(--v);color:#fff;padding:17px 36px;border-radius:40px;text-decoration:none;font-weight:600;display:inline-block}
-.blob{aspect-ratio:1;background:linear-gradient(135deg,#c9a7e6,#f6c9c0);border-radius:42% 58% 63% 37%/45% 40% 60% 55%;animation:m 9s ease-in-out infinite}
-@keyframes m{50%{border-radius:60% 40% 38% 62%/58% 62% 38% 42%}}
-section{padding:90px 6vw}h2{font-size:clamp(28px,4vw,46px);margin-bottom:44px}
-.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
-.c{background:var(--p);border-radius:26px;padding:34px}.c h3{font-size:22px;margin-bottom:10px}.c p{opacity:.7;line-height:1.6;font-size:15px}
-.t{background:var(--k);color:#fff;border-radius:30px;margin:0 6vw}
-.t table{width:100%;border-collapse:collapse}.t td{padding:18px 0;border-bottom:1px solid #fff2;font-size:17px}.t td:last-child{text-align:right;color:#d6bff0}
-.pr{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
-.pr .c{background:#fff;border:2px solid var(--p);text-align:center}.pr .big{font-size:40px;font-weight:700;color:var(--v);margin:12px 0}
-form{display:flex;gap:12px;flex-wrap:wrap}form input{flex:1;min-width:200px;padding:16px 22px;border-radius:40px;border:2px solid var(--p);font-size:16px}
-form button{background:var(--v);color:#fff;border:0;padding:16px 34px;border-radius:40px;font-weight:600;cursor:pointer;font-size:16px}
-footer{padding:40px 6vw;font-size:13px;opacity:.55}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
-@media(max-width:800px){.hero,.two{grid-template-columns:1fr}.blob{max-width:300px}}
-</style></head><body>
-<nav><b>flowline</b><div><a href="#s">Расписание</a><a href="#p">Цены</a><a href="#z">Запись</a></div></nav>
-<div class="hero"><div><h1>Йога, после которой <span>хочется жить</span></h1><p>Небольшие группы, мягкие практики и преподаватели, которые следят за вашей техникой.</p><a class="btn" href="#z">Первое занятие — бесплатно</a></div><img src="img/hero.jpg" alt="Студия йоги" style="width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:42% 58% 63% 37%/45% 40% 60% 55%;animation:m 9s ease-in-out infinite"></div>
-<section class="two"><img src="img/class.jpg" alt="Групповое занятие" style="width:100%;border-radius:30px;aspect-ratio:4/3;object-fit:cover"><div><h2 style="margin-bottom:20px">Небольшие группы до 10 человек</h2><p style="font-size:18px;line-height:1.7;opacity:.7">Преподаватель следит за техникой каждого и подбирает нагрузку под ваш уровень.</p></div></section>
-<section><h2>Направления</h2><div class="g"><div class="c"><h3>Хатха</h3><p>Спокойный темп, база для новичков.</p></div><div class="c"><h3>Виньяса</h3><p>Динамика и дыхание, больше нагрузки.</p></div><div class="c"><h3>Инь-йога</h3><p>Долгие растяжки для восстановления.</p></div><div class="c"><h3>Для спины</h3><p>Профилактика болей при сидячей работе.</p></div></div></section>
-<div class="t" id="s" style="padding:50px 5vw"><h2 style="margin-bottom:20px">Расписание на неделю</h2><table><tr><td>Пн · 08:00</td><td>Виньяса</td></tr><tr><td>Вт · 19:30</td><td>Хатха</td></tr><tr><td>Ср · 20:00</td><td>Инь-йога</td></tr><tr><td>Чт · 08:00</td><td>Для спины</td></tr><tr><td>Сб · 11:00</td><td>Виньяса</td></tr></table></div>
-<section id="p"><h2>Абонементы</h2><div class="pr"><div class="c"><h3>Разовое</h3><div class="big">900 ₽</div><p>Одно занятие</p></div><div class="c"><h3>8 занятий</h3><div class="big">5 600 ₽</div><p>Действует 5 недель</p></div><div class="c"><h3>Безлимит</h3><div class="big">8 900 ₽</div><p>Месяц без ограничений</p></div></div></section>
-<section class="two"><div><h2 style="margin-bottom:20px">Пространство, где хочется остаться</h2><p style="font-size:18px;line-height:1.7;opacity:.7">Чай после практики, мягкий свет и никакой суеты: мы заботимся о деталях.</p></div><img src="img/detail.jpg" alt="Детали студии" style="width:100%;border-radius:30px;aspect-ratio:4/3;object-fit:cover"></section>
-<section id="z" style="background:var(--p)"><h2>Записаться на пробное</h2><form onsubmit="event.preventDefault();this.innerHTML='<b>Спасибо! Мы свяжемся с вами.</b>'"><input placeholder="Ваше имя" required><input placeholder="Телефон" required><button>Записаться</button></form></section>
-<footer>© Flowline — демо-страница, бренд вымышлен</footer>
-</body></html>
+:root{
+  --bg:#e3ebe8;
+  --paper:#f2f6f4;
+  --teal:#0d4b53;
+  --teal-2:#2f6f74;
+  --ink:#10282c;
+  --muted:#46605f;
+  --line:#b9cac6;
+  --rasp:#b3124f;
+  --serif:'Spectral',Georgia,serif;
+  --sans:'Golos Text',system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.55 var(--sans)}
+img{display:block;max-width:100%}
+a{color:var(--teal)}
+button,input{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--rasp);outline-offset:2px}
+.p{font-family:var(--sans);font-variant-numeric:tabular-nums}
+.wrap{max-width:1360px;margin:0 auto;padding:0 32px}
+
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}
+.logo{font:600 24px/1 var(--serif);color:var(--teal);text-decoration:none;letter-spacing:.01em}
+.top span{font-size:14px;color:var(--muted)}
+
+.hero{display:grid;grid-template-columns:340px 1fr;gap:32px;padding-bottom:48px}
+.intro{display:flex;flex-direction:column}
+h1{font:500 34px/1.14 var(--serif);margin:4px 0 20px;color:var(--teal);letter-spacing:-.005em}
+.intro p{margin:0 0 18px;color:var(--muted);font-size:15px}
+.filter{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 20px;padding:0;border:0;min-width:0}
+.filter legend{font-size:14px;color:var(--muted);padding:0;margin-bottom:8px}
+.filter button{min-height:44px;padding:0 14px;border:1.5px solid var(--teal);background:transparent;border-radius:22px;cursor:pointer;font-size:15px}
+.filter button[aria-pressed=true]{background:var(--teal);color:#fff}
+.zz{flex:1;min-height:180px;border-radius:2px;overflow:hidden;position:relative}
+.zz img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 25%}
+
+.tabs{display:none}
+.week{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:10px;align-items:start}
+.day h2{font:600 15px/1 var(--sans);margin:0 0 10px;padding-bottom:10px;border-bottom:2px solid var(--teal)}
+.day.today h2{border-color:var(--rasp);color:var(--rasp)}
+.day ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.cls{display:block;width:100%;text-align:left;background:var(--paper);border:0;border-left:5px solid var(--teal-2);border-radius:2px;padding:9px 10px 10px;cursor:pointer;min-height:44px}
+.cls[data-lv=new]{border-left-color:var(--rasp)}
+.cls[data-lv=adv]{border-left-color:var(--ink)}
+.cls .t{font-weight:600;font-size:17px;display:block;line-height:1.2}
+.cls .n{font-size:14px;line-height:1.3;display:block;margin:2px 0 6px}
+.cls .s{font-size:13px;color:var(--muted);display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.cls.next{outline:2px solid var(--rasp);outline-offset:1px}
+.cls.next .t::after{content:" ближайшее";font:500 12px var(--sans);color:var(--rasp)}
+.dots{display:inline-flex;gap:2px;flex-wrap:wrap}
+.dots i{width:5px;height:5px;border-radius:50%;background:var(--teal-2)}
+.dots i.x{background:transparent;box-shadow:inset 0 0 0 1px var(--teal-2);opacity:.6}
+.empty{font-size:14px;color:var(--muted);padding:6px 0}
+.legend{grid-column:1/-1;display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-top:6px}
+.legend b{display:inline-block;width:5px;height:14px;vertical-align:-2px;margin-right:6px;background:var(--teal-2)}
+.legend b.new{background:var(--rasp)}.legend b.adv{background:var(--ink)}
+
+section.blk{padding:56px 0;border-top:1px solid var(--line)}
+.band img{width:100%;height:auto;aspect-ratio:1920/560;object-fit:cover}
+.duo{display:grid;grid-template-columns:1.25fr 1fr;gap:80px;align-items:start}
+.duo .prices{max-width:none}
+h2.h{font-size:40px;line-height:1.1}
+section.blk{padding:88px 0}
+section.teal{background:var(--teal);color:#e8f0ee;border-top:0}
+section.teal h2.h{color:#fff}
+section.teal figcaption{color:#b9d0cd}
+#where p{font-size:18px;max-width:30ch}
+#where dl{margin:20px 0 0;font-size:18px}
+#where dt{margin-top:14px;font-weight:600}
+#where dd{margin:0}
+
+h2.h{font:500 30px/1.2 var(--serif);color:var(--teal);margin:0 0 24px}
+.prices{max-width:760px}
+.price{display:flex;align-items:center;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
+.price div{flex:1}
+.price strong{display:block;font-weight:600}
+.price small{color:var(--muted);font-size:14px}
+.price .sum{font-size:22px;font-weight:600;white-space:nowrap;flex:none}
+.btn{min-height:44px;padding:0 20px;border:0;background:var(--rasp);color:#fff;border-radius:22px;cursor:pointer;font-weight:500}
+.btn.ghost{background:transparent;color:var(--teal);box-shadow:inset 0 0 0 1.5px var(--teal)}
+.first{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.first ul{padding-left:20px;margin:0 0 16px;max-width:52ch}
+.first li{margin-bottom:8px}
+.first img{width:100%;aspect-ratio:900/360;height:auto;object-fit:cover;border-radius:2px}
+.first figcaption{font-size:14px;color:var(--muted);margin-top:8px}
+.where{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.where dl{margin:0}
+.where dt{font-weight:600;margin-top:12px}
+.where dd{margin:0}
+footer{background:#0a363c;color:#e3ebe8;padding:32px 0 40px;font-size:14px}
+footer a{color:#fff}
+footer p{margin:0 0 8px;max-width:90ch}
+
+dialog{border:0;padding:0;background:var(--paper);color:var(--ink);box-shadow:0 20px 60px rgba(16,40,44,.35)}
+dialog::backdrop{background:rgba(16,40,44,.45)}
+.dlg{padding:28px;position:relative}
+.close{position:absolute;top:8px;right:8px;min-width:44px;min-height:44px;background:none;border:0;cursor:pointer;font-size:15px;color:var(--teal);text-decoration:underline}
+#sheet{margin:0 0 0 auto;height:100%;max-height:100%;max-width:100%;width:min(440px,100%);animation:in-r .25s ease-out}
+#book{width:min(440px,calc(100% - 32px));border-radius:4px;margin:auto}
+@keyframes in-r{from{transform:translateX(40px);opacity:0}}
+@keyframes in-b{from{transform:translateY(40px);opacity:0}}
+.dlg h3{font:500 28px/1.2 var(--serif);margin:0 56px 4px 0;color:var(--teal)}
+.dlg .when{margin:0 0 16px;font-size:18px;font-weight:600}
+.facts{margin:0 0 16px}
+.facts div{display:flex;gap:12px;padding:8px 0;border-bottom:1px solid var(--line)}
+.facts dt{width:130px;color:var(--muted);flex:none}
+.facts dd{margin:0}
+.spots{font-size:18px;font-weight:600;margin:0 0 6px}
+.spots-dots{display:flex;gap:4px;margin-bottom:20px;flex-wrap:wrap}
+.spots-dots i{width:14px;height:14px;border-radius:50%;background:var(--rasp)}
+.spots-dots i.x{background:transparent;box-shadow:inset 0 0 0 2px var(--teal-2)}
+.dlg label{display:block;font-weight:500;margin:14px 0 4px}
+.dlg input{width:100%;min-height:48px;padding:0 12px;border:1.5px solid var(--teal-2);background:#fff;border-radius:4px}
+.dlg .row{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}
+.bubble{background:#dcf8c6;color:#13251a;border-radius:12px 12px 12px 2px;padding:12px 14px;white-space:pre-line;max-width:100%;font-size:15px;margin:12px 0}
+.demo{font-size:14px;color:var(--muted)}
+[hidden]{display:none!important}
+
+@media (max-width:1100px){
+  .hero{grid-template-columns:1fr}
+  .zz{display:none}
+  h1{font-size:30px}
+}
+@media (max-width:760px){
+  .wrap{padding:0 16px}
+  .top span{display:none}
+  h1{font-size:26px}
+  .tabs{display:flex;gap:4px;margin:0 0 12px}
+  .tabs button{flex:1;min-width:44px;min-height:44px;padding:0;border:1.5px solid var(--teal);background:transparent;border-radius:6px;cursor:pointer;font-weight:500;font-size:15px}
+  .tabs button[aria-selected=true]{background:var(--teal);color:#fff}
+  .tabs button.today{border-color:var(--rasp)}
+  .week{display:block}
+  .day{display:none}
+  .day.show{display:block}
+  .day h2{display:none}
+  .cls{padding:12px}
+  .cls .t{font-size:19px}
+  .first,.duo{grid-template-columns:1fr;gap:40px}
+  h2.h{font-size:32px}
+  .price{flex-wrap:wrap}
+  .price .btn{width:100%}
+  section.blk{padding:56px 0}
+  #sheet{margin:auto 0 0 0;width:100%;max-width:100%;height:auto;max-height:90%;border-radius:12px 12px 0 0;animation:in-b .25s ease-out}
+}
+@media (prefers-reduced-motion:reduce){#sheet{animation:none}*{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header class="wrap top">
+  <a class="logo" href="#">Flowline</a>
+  <span>Астана, ул. Кунаева, 14, 2 этаж</span>
+</header>
+
+<main>
+<div class="wrap hero" id="schedule">
+  <div class="intro">
+    <h1>Йога в Астане: 20 занятий в неделю, 6 из них для тех, кто пришёл впервые</h1>
+    <p>Выберите занятие, посмотрите свободные места и запишитесь. Коврики и блоки в студии есть.</p>
+    <fieldset class="filter" id="filter">
+      <legend>Уровень</legend>
+      <button type="button" data-lv="" aria-pressed="true">Все занятия</button>
+      <button type="button" data-lv="new" aria-pressed="false">Новичкам</button>
+      <button type="button" data-lv="all" aria-pressed="false">Все уровни</button>
+      <button type="button" data-lv="adv" aria-pressed="false">Опытным</button>
+    </fieldset>
+  </div>
+  <div>
+    <div class="tabs" role="tablist" aria-label="День недели" id="tabs"></div>
+    <div class="week" id="week" aria-live="polite"></div>
+  </div>
+</div>
+
+<div class="band"><img src="img/band.jpg" alt="Окна студии с сине-зелёными шторами и поднятая рука в боковом наклоне" width="1920" height="560"></div>
+
+<section class="blk" id="prices"><div class="wrap duo">
+<div><h2 class="h">Цены</h2>
+  <div class="prices">
+    <div class="price"><div><strong>Разовое занятие</strong><small>Любое занятие из расписания</small></div><span class="sum p">4 000 ₸</span><button class="btn ghost" data-plan="Разовое занятие, 4 000 ₸">Выбрать</button></div>
+    <div class="price"><div><strong>Пробная неделя</strong><small>7 дней, занятия для новичков без ограничений</small></div><span class="sum p">6 000 ₸</span><button class="btn ghost" data-plan="Пробная неделя, 6 000 ₸">Выбрать</button></div>
+    <div class="price"><div><strong>8 занятий</strong><small>Действует 5 недель</small></div><span class="sum p">24 000 ₸</span><button class="btn ghost" data-plan="Абонемент на 8 занятий, 24 000 ₸">Выбрать</button></div>
+    <div class="price"><div><strong>Безлимит на месяц</strong><small>Любое число занятий, 30 дней</small></div><span class="sum p">38 000 ₸</span><button class="btn ghost" data-plan="Безлимит на месяц, 38 000 ₸">Выбрать</button></div>
+  </div>
+  <p class="demo" style="margin-top:14px">Оплата переводом Kaspi, Kaspi QR или картой на ресепшене.</p>
+</div>
+<div id="where"><h2 class="h">Адрес и часы</h2>
+    <p>Астана, ул. Кунаева, 14, 2 этаж, студия 205. Вход со двора, лифт есть.</p>
+    <dl class="p">
+      <dt>Понедельник — пятница</dt><dd>7:30–21:30</dd>
+      <dt>Суббота и воскресенье</dt><dd>9:00–18:00</dd>
+    </dl></div>
+</div></section>
+
+<section class="blk teal" id="first"><div class="wrap first">
+  <div>
+    <h2 class="h">Первый раз</h2>
+    <ul>
+      <li>Приходите за 15 минут до начала: покажем раздевалку и подберём место.</li>
+      <li>Возьмите удобную одежду, в которой можно наклоняться. На занятии босиком, носки нужны для раздевалки.</li>
+      <li>Коврики, блоки и ремни есть, свои брать не нужно.</li>
+      <li>Не ешьте за 2 часа до занятия. Воду можно взять с собой.</li>
+      <li>О травмах и беременности скажите преподавателю до начала.</li>
+    </ul>
+    <p>Начните с занятий с пометкой «Новичкам»: группа до 12 человек, преподаватель объясняет каждую позу.</p>
+  </div>
+  <figure style="margin:0"><img src="img/class-mats.jpg" alt="Коврик, чёрные блоки и сложенные полотенца в зале" width="900" height="360" loading="lazy"><figcaption>Коврики и блоки лежат в зале.</figcaption></figure>
+</div></section>
+
+</main>
+
+<footer><div class="wrap">
+  <p>Концепт сайта, бренд вымышленный. Сделал Абдуали.</p>
+  <p>Фото: DVIDS (армия США), общественное достояние (Public domain), кадры Wikimedia Commons, обрезаны: <a href="https://commons.wikimedia.org/wiki/File:LRMC_Yoga_Class_%288727547%29.jpg" rel="noopener">LRMC Yoga Class (8727547)</a> и <a href="https://commons.wikimedia.org/wiki/File:LRMC_Yoga_Class_%288727552%29.jpg" rel="noopener">LRMC Yoga Class (8727552)</a>.</p>
+</div></footer>
+
+<dialog id="sheet" aria-labelledby="sh-title">
+  <div class="dlg">
+    <button type="button" class="close" id="sh-close">Закрыть</button>
+    <h3 id="sh-title"></h3>
+    <p class="when p" id="sh-when"></p>
+    <dl class="facts">
+      <div><dt>Длительность</dt><dd id="sh-dur"></dd></div>
+      <div><dt>Преподаватель</dt><dd id="sh-teach"></dd></div>
+      <div><dt>Уровень</dt><dd id="sh-lv"></dd></div>
+    </dl>
+    <p class="spots p" id="sh-spots"></p>
+    <div class="spots-dots" id="sh-dots" aria-hidden="true"></div>
+    <button type="button" class="btn" id="sh-book"></button>
+  </div>
+</dialog>
+
+<dialog id="book" aria-labelledby="bk-title">
+  <div class="dlg">
+    <button type="button" class="close" id="bk-close">Закрыть</button>
+    <h3 id="bk-title">Запись</h3>
+    <p class="demo" id="bk-what"></p>
+    <form id="bk-form" method="dialog">
+      <label for="bk-name">Имя</label>
+      <input id="bk-name" name="name" autocomplete="name" required>
+      <label for="bk-phone">Телефон</label>
+      <input id="bk-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 7__ ___ __ __" required pattern="[+0-9 ()\-]{10,}">
+      <div class="row"><button class="btn" type="submit">Отправить заявку</button></div>
+    </form>
+    <div id="bk-done" hidden>
+      <p>Так заявка придёт владельцу в WhatsApp:</p>
+      <div class="bubble" id="bk-msg"></div>
+      <p class="demo">Демо, ничего не отправлено.</p>
+      <div class="row"><button type="button" class="btn ghost" id="bk-ok">Закрыть</button></div>
+    </div>
+  </div>
+</dialog>
+
+<script>
+const DAYS=['Пн','Вт','Ср','Чт','Пт','Сб','Вс'];
+const DAYFULL=['понедельник','вторник','среда','четверг','пятница','суббота','воскресенье'];
+const T={a:['Айгерим Сейтова','хатха-йога',9],d:['Дмитрий Ковалёв','виньяса',7],n:['Динара Оспанова','инь-йога и мягкий поток',5],r:['Руслан Ахметов','аштанга',11]};
+const LV={new:'Новичкам',all:'Все уровни',adv:'Опытным'};
+// [день 0-6, время, название, уровень, минут, преподаватель, свободно из 12]
+const RAW=[
+[0,'07:30','Хатха для начинающих','new',60,'a',5],[0,'12:30','Мягкий поток','all',60,'n',7],[0,'19:00','Виньяса','all',75,'d',3],
+[1,'08:00','Хатха для начинающих','new',60,'a',8],[1,'18:30','Инь-йога','all',75,'n',4],[1,'20:00','Аштанга','adv',90,'r',2],
+[2,'07:30','Виньяса','all',75,'d',6],[2,'12:30','Спина и шея','new',45,'a',9],[2,'19:00','Хатха для начинающих','new',60,'a',3],
+[3,'08:00','Аштанга','adv',90,'r',5],[3,'18:30','Виньяса','all',75,'d',0],[3,'20:00','Инь-йога','all',75,'n',6],
+[4,'07:30','Хатха','all',60,'a',7],[4,'12:30','Виньяса','all',75,'d',10],[4,'19:00','Йога для новичков','new',60,'n',4],
+[5,'10:00','Хатха для начинающих','new',60,'a',2],[5,'11:30','Виньяса','all',75,'d',5],[5,'13:00','Аштанга','adv',90,'r',8],
+[6,'10:00','Инь-йога','all',75,'n',9],[6,'17:00','Мягкий поток','all',60,'a',6]
+].map((r,i)=>({id:i,day:r[0],time:r[1],name:r[2],lv:r[3],dur:r[4],t:r[5],left:r[6],total:12}));
+
+const $=s=>document.querySelector(s);
+const week=$('#week'),tabs=$('#tabs');
+let level='',cur=null,lastFocus=null;
+const jsToIdx=d=>(d+6)%7;
+const today=jsToIdx(new Date().getDay());
+let curDay=today;
+
+function endTime(c){const [h,m]=c.time.split(':').map(Number);const e=h*60+m+c.dur;return String(Math.floor(e/60)).padStart(2,'0')+':'+String(e%60).padStart(2,'0')}
+function dots(n,total){return Array.from({length:total},(_,i)=>`<i class="${i<total-n?'x':''}"></i>`).join('')}
+function nextClass(list){
+  const now=new Date(),nd=jsToIdx(now.getDay()),nm=now.getHours()*60+now.getMinutes();
+  let best=null,bd=1e9;
+  for(const c of list){const [h,m]=c.time.split(':').map(Number);let d=((c.day-nd)*1440+(h*60+m)-nm);if(d<0)d+=7*1440;if(d<bd){bd=d;best=c}}
+  return best;
+}
+function render(){
+  const list=RAW.filter(c=>!level||c.lv===level);
+  const nxt=nextClass(list);
+  week.innerHTML=DAYS.map((d,i)=>{
+    const items=list.filter(c=>c.day===i);
+    const li=items.length?items.map(c=>`<li><button type="button" class="cls${nxt&&nxt.id===c.id?' next':''}" data-id="${c.id}" data-lv="${c.lv}"><span class="t p">${c.time}</span><span class="n">${c.name}</span><span class="s p"><span class="dots" aria-hidden="true">${dots(c.left,c.total)}</span>${c.left?'осталось '+c.left:'мест нет'}</span></button></li>`).join(''):'<li class="empty">В этот день таких занятий нет</li>';
+    return `<section class="day${i===today?' today':''}${i===curDay?' show':''}" data-day="${i}"><h2>${d}${i===today?', сегодня':''}</h2><ul>${li}</ul></section>`;
+  }).join('')+'<div class="legend"><span><b class="new"></b>новичкам</span><span><b></b>все уровни</span><span><b class="adv"></b>опытным</span><span>Закрашенные точки: свободные места из 12</span></div>';
+}
+function renderTabs(){
+  tabs.innerHTML=DAYS.map((d,i)=>`<button type="button" role="tab" aria-selected="${i===curDay}" data-day="${i}"${i===today?' class="today"':''}>${d}</button>`).join('');
+}
+function setDay(i){curDay=i;renderTabs();document.querySelectorAll('.day').forEach(el=>el.classList.toggle('show',+el.dataset.day===i))}
+tabs.addEventListener('click',e=>{const b=e.target.closest('button');if(b)setDay(+b.dataset.day)});
+$('#filter').addEventListener('click',e=>{
+  const b=e.target.closest('button');if(!b)return;
+  level=b.dataset.lv;
+  document.querySelectorAll('#filter button').forEach(x=>x.setAttribute('aria-pressed',x===b));
+  render();
+});
+
+const sheet=$('#sheet'),book=$('#book');
+week.addEventListener('click',e=>{
+  const b=e.target.closest('.cls');if(!b)return;
+  lastFocus=b;openSheet(RAW[+b.dataset.id]);
+});
+function openSheet(c){
+  cur=c;const t=T[c.t];
+  $('#sh-title').textContent=c.name;
+  $('#sh-when').textContent=`${DAYFULL[c.day][0].toUpperCase()+DAYFULL[c.day].slice(1)}, ${c.time}–${endTime(c)}`;
+  $('#sh-dur').textContent=c.dur+' минут';
+  $('#sh-teach').textContent=`${t[0]}, ${t[1]}, стаж ${t[2]} лет`;
+  $('#sh-lv').textContent=LV[c.lv];
+  $('#sh-spots').textContent=c.left?`Осталось ${c.left} из ${c.total}`:`Мест нет: заняты все ${c.total}`;
+  $('#sh-dots').innerHTML=Array.from({length:c.total},(_,i)=>`<i class="${i<c.total-c.left?'x':''}"></i>`).join('');
+  $('#sh-book').textContent=c.left?'Записаться':'Встать в лист ожидания';
+  sheet.showModal();
+}
+sheet.addEventListener('click',e=>{if(e.target===sheet)sheet.close()});
+$('#sh-close').onclick=()=>sheet.close();
+$('#sh-book').onclick=()=>{const c=cur;sheet.close();openBook(`${c.name}, ${DAYFULL[c.day]} ${c.time}`+(c.left?'':' (лист ожидания)'))};
+document.querySelectorAll('[data-plan]').forEach(b=>b.onclick=()=>{lastFocus=b;openBook(b.dataset.plan)});
+
+let what='';
+function openBook(w){
+  what=w;$('#bk-what').textContent=w;
+  $('#bk-form').hidden=false;$('#bk-done').hidden=true;$('#bk-form').reset();
+  book.showModal();
+}
+book.addEventListener('click',e=>{if(e.target===book)book.close()});
+$('#bk-close').onclick=$('#bk-ok').onclick=()=>book.close();
+$('#bk-form').addEventListener('submit',e=>{
+  e.preventDefault();
+  const n=$('#bk-name').value.trim(),p=$('#bk-phone').value.trim();
+  $('#bk-msg').textContent=`Новая запись во Flowline\n${what}\nИмя: ${n}\nТелефон: ${p}`;
+  $('#bk-form').hidden=true;$('#bk-done').hidden=false;
+});
+book.addEventListener('close',()=>{if(lastFocus)lastFocus.focus()});
+
+renderTabs();render();
+</script>
+</body>
+</html>

@@ -1,42 +1,412 @@
 <!doctype html>
-<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Ember Roasters — концепт сайта</title>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ember: обжарка кофе в Алматы</title>
+<meta name="description" content="Обжариваем по вторникам и пятницам, доставка по Алматы на следующий день. Профиль обжарки каждого лота, подписка от 5 500 ₸.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geologica:wght@400;600;700&family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--b:#17110d;--c:#f3e9dc;--a:#d98a3d}
-*{box-sizing:border-box;margin:0}
-body{font-family:'Helvetica Neue',Arial,sans-serif;background:var(--b);color:var(--c)}
-nav{display:flex;justify-content:space-between;padding:28px 6vw;font-size:14px;letter-spacing:.15em;text-transform:uppercase}
-nav b{letter-spacing:.4em}
-.hero{padding:9vh 6vw 14vh;background:linear-gradient(90deg,#17110dee 35%,#17110d66),url(img/coffee-hero.jpg) center/cover}
-.pic{width:100%;height:420px;object-fit:cover;display:block}
-.hero h1{font-size:clamp(54px,12vw,170px);line-height:.9;font-weight:300;letter-spacing:-.03em}
-.hero h1 i{color:var(--a);font-family:Georgia,serif}
-.hero p{max-width:44ch;margin:40px 0;opacity:.7;line-height:1.7;font-size:18px}
-.btn{border:1px solid var(--a);color:var(--a);padding:16px 36px;text-decoration:none;text-transform:uppercase;letter-spacing:.2em;font-size:13px;transition:.25s}
-.btn:hover{background:var(--a);color:var(--b)}
-.lots{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));border-top:1px solid #fff2}
-.lot{padding:46px 6vw;border-right:1px solid #fff2;border-bottom:1px solid #fff2;transition:.3s}
-.lot:hover{background:#221914}
-.lot small{color:var(--a);letter-spacing:.2em;text-transform:uppercase;font-size:12px}
-.lot h3{font-size:30px;font-weight:300;margin:14px 0}
-.lot p{opacity:.6;line-height:1.6;font-size:15px}
-.lot div{margin-top:26px;display:flex;justify-content:space-between;align-items:center}
-.lot button{background:0;border:1px solid #fff4;color:var(--c);padding:10px 20px;cursor:pointer}
-.lot button:hover{border-color:var(--a);color:var(--a)}
-.sub{display:grid;grid-template-columns:1fr 1fr;gap:60px;padding:120px 6vw;align-items:center}
-.sub h2{font-size:clamp(34px,5vw,64px);font-weight:300;line-height:1.1}
-.sub ul{list-style:none;padding:0;font-size:18px}.sub li{padding:22px 0;border-bottom:1px solid #fff2;display:flex;justify-content:space-between}
-.sub li span{color:var(--a)}
-footer{padding:40px 6vw;font-size:13px;opacity:.5}footer em{display:block;margin-top:8px;font-style:normal}
-@media(max-width:800px){.sub{grid-template-columns:1fr}}
-</style></head><body>
-<nav><b>Ember</b><span>Кофе · Подписка · О нас</span></nav>
-<div class="hero"><h1>Обжарка<br>с <i>характером</i></h1><p>Небольшие партии зерна из лучших хозяйств. Обжариваем в день заказа и привозим за два дня.</p><a class="btn" href="#l">Выбрать кофе</a></div>
-<div class="lots" id="l"></div>
-<img class="pic" src="img/coffee-brew.jpg" alt="Заваривание кофе в воронке">
-<div class="sub"><div><img src="img/bag.jpg" alt="Пакет кофе" style="width:100%;max-width:420px;display:block;margin-bottom:40px"><h2>Свежий кофе по подписке — каждые две недели</h2></div><ul><li>Эспрессо-набор <span>от 1 290 ₽</span></li><li>Фильтр-набор <span>от 1 390 ₽</span></li><li>Дегустационный сет <span>от 1 890 ₽</span></li></ul></div>
-<footer>© Ember Roasters — вымышленный бренд, демо-страница<em>Концепт сайта</em></footer>
+:root{
+  --drum:#15171a;      /* графит барабана */
+  --plate:#1d2023;
+  --line:#32363b;
+  --ink:#e8e3da;       /* тёплый светлый серый */
+  --mute:#a7a299;
+  --signal:#ff5533;    /* сигнальный оранжево-красный */
+  --signal-ink:#15171a;
+  --head:'Geologica','Segoe UI',sans-serif;
+  --body:'IBM Plex Sans','Segoe UI',sans-serif;
+  --mono:'IBM Plex Mono',Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--drum);color:var(--ink);font:400 16px/1.55 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--signal);outline-offset:3px}
+.wrap{max-width:1400px;margin:0 auto;padding:0 32px}
+h1,h2,h3{font-family:var(--head);margin:0;letter-spacing:-.01em}
+h2{font-size:clamp(26px,3vw,36px);font-weight:600;line-height:1.15}
+p{margin:0}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;border:0;border-radius:3px;background:var(--signal);color:var(--signal-ink);font:600 16px var(--body);cursor:pointer;text-decoration:none}
+.btn:hover{background:#ff6c4e}
+.btn.ghost{background:none;color:var(--ink);border:1px solid var(--line)}
+.btn.ghost:hover{border-color:var(--mute);background:none}
+
+header.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}
+.brand{font:700 24px var(--head);text-decoration:none;display:flex;align-items:center;gap:10px;min-height:44px}
+.brand i{width:12px;height:12px;border-radius:50%;background:var(--signal);display:block}
+nav.top{display:flex;gap:4px;align-items:center}
+nav.top a{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;text-decoration:none;color:var(--mute)}
+nav.top a:hover{color:var(--ink)}
+nav.top .btn{min-height:44px;margin-left:8px;color:var(--signal-ink)}
+
+.hero{display:grid;grid-template-columns:minmax(0,440px) minmax(0,1fr);gap:44px;padding:20px 0 64px;align-items:start}
+.hero h1{font-size:clamp(30px,2.8vw,40px);font-weight:700;line-height:1.08}
+.hero .lede{margin-top:20px;color:var(--mute);max-width:44ch}
+.hero .lede b{color:var(--ink);font-weight:500}
+.now{margin-top:28px;padding-top:20px;border-top:1px solid var(--line)}
+.now h2{font-size:22px;font-weight:600}
+.now dl{display:grid;grid-template-columns:auto 1fr;gap:6px 20px;margin:14px 0 0}
+.now dt{color:var(--mute)}
+.now dd{margin:0;font-variant-numeric:tabular-nums}
+.hero .btn{margin-top:28px}
+
+.chart{position:relative;background:var(--plate);border-radius:4px;padding:8px}
+.chart svg{display:block;width:100%;height:auto;overflow:visible}
+.chart .ph{position:absolute;margin:0;width:17%;background:var(--drum);border-radius:3px;overflow:hidden}
+.chart .ph img{display:block;width:100%;height:auto}
+.chart .ph figcaption{padding:5px 8px 6px;font-size:12px;line-height:1.3;color:var(--mute)}
+.ph.start{left:14%;top:4%}
+.ph.end{right:3%;bottom:13%}
+.legend{display:none;margin:10px 4px 2px;padding:0;list-style:none;font-size:14px}
+.legend li{display:flex;gap:10px;align-items:center;padding:4px 0}
+.legend i{width:12px;height:12px;border-radius:50%;border:3px solid var(--signal);flex:none}
+.legend span{color:var(--mute);margin-left:auto;font-variant-numeric:tabular-nums}
+.chart-note{margin-top:10px;color:var(--mute);font-size:14px}
+svg text{font-family:var(--body)}
+svg .ax{font-family:var(--mono);font-size:11px;fill:#a7a299}
+svg .lab{font-size:13px;fill:var(--ink)}
+svg .val{font-size:13px;fill:var(--mute);font-variant-numeric:tabular-nums}
+
+section.blk{padding:72px 0;border-top:1px solid var(--line)}
+section.blk p.sub{margin-top:12px;color:var(--mute);max-width:60ch}
+
+.lots{width:100%;border-collapse:collapse;margin-top:28px}
+.lots th{text-align:left;font-weight:500;color:var(--mute);font-size:14px;padding:0 16px 10px 16px;border-bottom:1px solid var(--line)}
+.lots td{padding:14px 16px;border-bottom:1px solid var(--line);vertical-align:middle}
+.lots tbody tr{cursor:pointer}
+.lots tbody tr:hover{background:#1a1d20}
+.lots tbody tr.on{background:var(--plate);box-shadow:inset 4px 0 0 var(--signal)}
+.lots .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.lots th.num{text-align:right}
+.lotbtn{all:unset;box-sizing:border-box;display:block;min-height:44px;cursor:pointer;font:600 17px/1.3 var(--head);padding:6px 0}
+.lotbtn small{display:block;font:400 14px var(--body);color:var(--mute)}
+.lotbtn:focus-visible{outline:2px solid var(--signal);outline-offset:4px}
+.lots td.price{font-weight:600;font-size:17px}
+
+.sub-grid{display:grid;grid-template-columns:minmax(0,440px) minmax(0,440px);justify-content:start;gap:72px;margin-top:32px;align-items:start}
+fieldset{border:0;padding:0;margin:0 0 26px}
+legend{padding:0;margin-bottom:10px;font-weight:500}
+.seg{display:flex;flex-wrap:wrap;gap:8px}
+.seg label{position:relative}
+.seg input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+.seg span{display:flex;align-items:center;min-height:48px;padding:0 20px;border:1px solid var(--line);border-radius:3px;background:var(--plate)}
+.seg input:checked+span{border-color:var(--signal);background:#2a1d1a}
+.seg input:focus-visible+span{outline:2px solid var(--signal);outline-offset:2px}
+.sum{background:var(--plate);border-radius:4px;padding:28px}
+.sum .big{font:700 clamp(40px,4vw,56px)/1 var(--head);font-variant-numeric:tabular-nums;margin:6px 0 4px}
+.sum ul{list-style:none;margin:18px 0 22px;padding:0;color:var(--mute)}
+.sum li{display:flex;justify-content:space-between;gap:16px;padding:8px 0;border-top:1px solid var(--line)}
+.sum li b{color:var(--ink);font-weight:500;font-variant-numeric:tabular-nums;text-align:right}
+.sum .btn{width:100%}
+
+.dl2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:56px;margin-top:32px}
+.dl2 h3{font-size:22px;font-weight:600;margin-bottom:14px}
+.rows{margin:0;padding:0;list-style:none}
+.rows li{display:grid;grid-template-columns:minmax(0,170px) minmax(0,1fr);gap:16px;padding:12px 0;border-top:1px solid var(--line)}
+.rows li span:first-child{color:var(--mute)}
+.pay{margin-top:36px;color:var(--mute);max-width:70ch}
+.pay b{color:var(--ink);font-weight:500}
+
+footer{border-top:1px solid var(--line);padding:36px 0 48px;color:var(--mute);font-size:14px}
+footer p+p{margin-top:8px}
+footer a{color:var(--ink)}
+
+dialog{width:min(460px,calc(100vw - 32px));max-height:calc(100vh - 32px);overflow:auto;background:var(--plate);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:0}
+#dForm,#dDone{padding:28px}
+dialog::backdrop{background:rgba(10,11,12,.75)}
+dialog h2{font-size:24px;margin-bottom:6px}
+dialog .hint{color:var(--mute);margin-bottom:18px}
+.f{display:block;margin-bottom:16px}
+.f span{display:block;margin-bottom:6px;font-weight:500}
+.f input{width:100%;min-height:48px;padding:0 14px;background:var(--drum);border:1px solid var(--line);border-radius:3px;color:var(--ink);font:400 16px var(--body)}
+.f input:focus{border-color:var(--signal);outline:none}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.row .btn{flex:1 1 auto}
+.wa{background:#0f2a22;border-radius:10px 10px 10px 2px;padding:14px 16px;white-space:pre-line;max-width:100%;overflow-wrap:anywhere;border:1px solid #1d4a3b}
+.demo{margin:14px 0 18px;color:var(--mute);font-size:14px}
+[hidden]{display:none!important}
+
+@media (max-width:1000px){
+  .hero{grid-template-columns:1fr;gap:28px}
+  .sub-grid,.dl2{grid-template-columns:1fr;gap:36px}
+}
+@media (max-width:760px){
+  .legend{display:block}
+  .wrap{padding:0 16px}
+  nav.top a:not(.btn){display:none}
+  .hero{padding-bottom:48px}
+  .chart .ph{position:static;width:auto}
+  .chart .phs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+  section.blk{padding:48px 0}
+  .lots thead{display:none}
+  .lots,.lots tbody,.lots tr,.lots td{display:block}
+  .lots tr{padding:10px 12px 12px;border-bottom:1px solid var(--line)}
+  .lots td{padding:2px 0;border:0}
+  .lots td.num{text-align:left}
+  .lots td[data-l]::before{content:attr(data-l) ": ";color:var(--mute)}
+  .lots td.price{margin-top:4px}
+  .rows li{grid-template-columns:1fr;gap:2px}
+  .sum{padding:20px}
+}
+@media (min-width:761px){.phs{display:contents}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#"><i aria-hidden="true"></i>Ember</a>
+    <nav class="top" aria-label="Разделы">
+      <a href="#lots">Лоты</a><a href="#subscribe">Подписка</a><a href="#delivery">Доставка</a>
+      <button class="btn" type="button" data-open="Хочу заказать кофе. Расскажите про лоты и доставку.">Оставить заявку</button>
+    </nav>
+  </header>
+
+  <main>
+  <div class="hero">
+    <div>
+      <h1>Обжариваем по вторникам и пятницам, доставка по Алматы на следующий день</h1>
+      <p class="lede">Обжарщик в Алматы. Один цикл: <b>загрузка при 195 °C, выгрузка через 10–12 минут</b>. На графике профиль, по которому мы ведём зерно. Нажмите на лот в таблице ниже, и кривая перестроится под него.</p>
+      <div class="now" aria-live="polite">
+        <h2 id="nowName">Эфиопия Гуджи</h2>
+        <dl id="nowDl"></dl>
+      </div>
+      <a class="btn" href="#subscribe">Собрать подписку</a>
+    </div>
+    <div>
+      <div class="chart" id="chartBox">
+        <svg id="chart" role="img" aria-label="График температуры зерна по времени для выбранного лота"></svg>
+        <div class="phs">
+          <figure class="ph start"><img src="img/roast-trier-2.jpg" width="900" height="675" alt="Зелёные необжаренные зёрна в щупе обжарочной машины"><figcaption>Загрузка: зелёное зерно в щупе</figcaption></figure>
+          <figure class="ph end"><img src="img/roast-trier.jpg" width="900" height="675" alt="Обжаренные коричневые зёрна в щупе обжарочной машины"><figcaption>Выгрузка: то же зерно после обжарки</figcaption></figure>
+        </div>
+        <ul class="legend" id="legend"></ul>
+      </div>
+      <p class="chart-note">Температура зерна в барабане, °C, по минутам обжарки. Кривая показывает типичный профиль для лота этой степени обжарки.</p>
+    </div>
+  </div>
+
+  <section class="blk" id="lots">
+    <h2>Лоты этой недели</h2>
+    <p class="sub">Цена за пачку 250 г. Строка выбирает профиль на графике.</p>
+    <table class="lots">
+      <thead><tr><th>Лот</th><th>Обработка</th><th>Ноты</th><th class="num">SCA</th><th>Обжарка</th><th class="num">250 г</th></tr></thead>
+      <tbody id="lotsBody"></tbody>
+    </table>
+  </section>
+
+  <section class="blk" id="subscribe">
+    <h2>Подписка: кофе приходит сам</h2>
+    <p class="sub">Выберите способ заваривания, объём и частоту. Цена считается сразу, доставка по Алматы в подписке бесплатна.</p>
+    <div class="sub-grid">
+      <form id="subForm" onsubmit="return false">
+        <fieldset><legend>Для чего кофе</legend><div class="seg">
+          <label><input type="radio" name="m" value="esp" checked><span>Эспрессо</span></label>
+          <label><input type="radio" name="m" value="fil"><span>Фильтр</span></label></div></fieldset>
+        <fieldset><legend>Объём пачки</legend><div class="seg">
+          <label><input type="radio" name="v" value="250" checked><span>250 г</span></label>
+          <label><input type="radio" name="v" value="1000"><span>1 кг</span></label></div></fieldset>
+        <fieldset><legend>Как часто</legend><div class="seg">
+          <label><input type="radio" name="f" value="2" checked><span>Раз в 2 недели</span></label>
+          <label><input type="radio" name="f" value="4"><span>Раз в 4 недели</span></label></div></fieldset>
+      </form>
+      <div class="sum" aria-live="polite">
+        <div>Одна доставка</div>
+        <div class="big" id="sPrice">5 500 ₸</div>
+        <ul>
+          <li><span>Что приедет</span><b id="sWhat"></b></li>
+          <li><span>Лоты</span><b id="sLots"></b></li>
+          <li><span>В месяц (4 недели)</span><b id="sMonth"></b></li>
+          <li><span>Доставка по Алматы</span><b>0 ₸</b></li>
+        </ul>
+        <button class="btn" type="button" id="sBtn">Оформить подписку</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="blk" id="delivery">
+    <h2>Доставка и оплата</h2>
+    <div class="dl2">
+      <div>
+        <h3>По Алматы</h3>
+        <ul class="rows">
+          <li><span>Обжарка</span><span>вторник и пятница</span></li>
+          <li><span>Заказ принимаем</span><span>до 18:00 в понедельник и четверг</span></li>
+          <li><span>Привезём</span><span>в среду и в субботу, с 10:00 до 20:00</span></li>
+          <li><span>Стоимость</span><span>1 500 ₸, бесплатно от 12 000 ₸ и в подписке</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>По Казахстану</h3>
+        <ul class="rows">
+          <li><span>Астана, Шымкент, Караганда</span><span>2–3 дня после обжарки</span></li>
+          <li><span>Остальные города</span><span>3–6 дней, курьерской службой</span></li>
+          <li><span>Стоимость</span><span>2 500 ₸ за заказ, бесплатно от 25 000 ₸</span></li>
+          <li><span>Упаковка</span><span>пачка с клапаном, дата обжарки на этикетке</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="pay"><b>Оплата:</b> Kaspi (перевод или Kaspi QR) или картой. Для кофейни и офиса от 5 кг в неделю цену считаем отдельно, напишите заявку.</p>
+  </section>
+  </main>
+
+  <footer>
+    <p>Концепт сайта, бренд вымышленный. Сделал Абдуали.</p>
+    <p>Фото: Jameswasswa, лицензия CC BY-SA 4.0, снимки обрезаны. <a href="https://commons.wikimedia.org/wiki/File:Closer_look_at_the_coffee_beans_from_the_coffee_roasting_machine_looking_at_their_progress.jpg" rel="noopener">Зелёное зерно</a>, <a href="https://commons.wikimedia.org/wiki/File:Closer_look_at_the_progress_of_the_coffee_beans_in_the_roasting_machine_as_they_change_color.jpg" rel="noopener">обжаренное зерно</a>, Wikimedia Commons.</p>
+  </footer>
+</div>
+
+<dialog id="dlg" aria-labelledby="dTitle">
+  <form id="dForm" method="dialog">
+    <h2 id="dTitle">Оставить заявку</h2>
+    <p class="hint">Перезвоним в течение рабочего дня и уточним детали.</p>
+    <label class="f"><span>Имя</span><input name="name" autocomplete="given-name" required minlength="2" maxlength="40"></label>
+    <label class="f"><span>Телефон</span><input name="tel" type="tel" inputmode="tel" autocomplete="tel" required pattern="[+0-9 ()\-]{10,18}" placeholder="+7 7__ ___ __ __" title="Номер телефона, минимум 10 цифр"></label>
+    <div class="row"><button class="btn" type="submit">Отправить заявку</button><button class="btn ghost" type="button" data-close>Закрыть</button></div>
+  </form>
+  <div id="dDone" hidden>
+    <h2>Так заявка придёт владельцу в WhatsApp</h2>
+    <p class="demo" style="margin-top:10px">Демо, ничего не отправлено.</p>
+    <div class="wa" id="waMsg"></div>
+    <div class="row" style="margin-top:18px"><button class="btn" type="button" data-close>Закрыть</button></div>
+  </div>
+</dialog>
+
 <script>
-[["Эфиопия","Иргачефф","Жасмин, бергамот, персик","890 ₽"],["Колумбия","Уила","Карамель, красное яблоко","790 ₽"],["Кения","Ньери","Чёрная смородина, цитрус","950 ₽"],["Бразилия","Серраду","Орех, шоколад, мёд","690 ₽"]]
-.forEach(function(c){document.getElementById('l').insertAdjacentHTML('beforeend','<div class="lot"><small>'+c[0]+'</small><h3>'+c[1]+'</h3><p>'+c[2]+'</p><div><b>'+c[3]+'</b><button>В корзину</button></div></div>')});
-</script></body></html>
+(function(){
+var T=function(n){return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g,' ')+' ₸'};
+var mm=function(m){var s=Math.round(m*60);return Math.floor(s/60)+':'+('0'+s%60).slice(-2)};
+var $=function(i){return document.getElementById(i)};
+var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* лоты: поворотная точка, первый крэк, выгрузка [минуты, °C] */
+var LOTS=[
+ {n:'Эфиопия',r:'Гуджи',p:'натуральная',notes:'жасмин, персик, лесные ягоды',sca:87,roast:'светлая',price:9000,tp:[1.17,88],fc:[8.0,197],dr:[10.0,205]},
+ {n:'Кения',r:'Ньери',p:'мытая',notes:'чёрная смородина, ревень, томат',sca:86,roast:'светлая',price:8200,tp:[1.2,89],fc:[8.2,197],dr:[10.4,206]},
+ {n:'Колумбия',r:'Уила',p:'мытая',notes:'карамель, красное яблоко, какао',sca:85,roast:'средняя',price:6400,tp:[1.25,90],fc:[8.5,198],dr:[11.0,208]},
+ {n:'Гватемала',r:'Уэуэтенанго',p:'мытая',notes:'молочный шоколад, орех, апельсин',sca:84,roast:'средне-тёмная',price:5900,tp:[1.27,91],fc:[8.6,198],dr:[11.5,210]},
+ {n:'Бразилия',r:'Сул-ди-Минас',p:'натуральная',notes:'лесной орех, тёмный шоколад, табак',sca:84,roast:'тёмная',price:5500,tp:[1.33,92],fc:[8.8,199],dr:[12.0,212]}
+];
+var cur=0, P=pack(LOTS[0]);
+function pack(l){return {a:l.tp[0],b:l.tp[1],c:l.fc[0],d:l.fc[1],e:l.dr[0],f:l.dr[1]}}
+
+/* кривая: резкий провал после загрузки, затем рост с затуханием */
+function curve(p){
+  var K=.27, s1=p.c-p.a, s2=p.e-p.a, e1=1-Math.exp(-K*s1), e2=1-Math.exp(-K*s2);
+  var r1=p.d-p.b, r2=p.f-p.b, det=e1*s2-e2*s1;
+  var A=(r1*s2-r2*s1)/det, B=(e1*r2-e2*r1)/det;
+  return function(t){
+    if(t<=p.a){var u=t/p.a;return p.b+(195-p.b)*Math.pow(1-u,2.2)}
+    var s=t-p.a;return p.b+A*(1-Math.exp(-K*s))+B*s;
+  };
+}
+
+var svg=$('chart'), box=$('chartBox'), reveal=1;
+var X0=0,X1=13,Y0=60,Y1=230;
+function draw(){
+  var W=Math.max(300,box.clientWidth-16), mob=W<640;
+  var H=mob?Math.round(W*1.2):Math.round(W*.575);
+  var m={l:46,r:14,t:14,b:34}, pw=W-m.l-m.r, ph=H-m.t-m.b;
+  var x=function(t){return m.l+(t-X0)/(X1-X0)*pw}, y=function(c){return m.t+(Y1-c)/(Y1-Y0)*ph};
+  svg.setAttribute('viewBox','0 0 '+W+' '+H);
+  var f=curve(P), pts=[], n=140, i;
+  for(i=0;i<=n;i++){var t=P.e*i/n;pts.push(x(t).toFixed(1)+','+y(f(t)).toFixed(1))}
+  var g='';
+  [80,120,160,200].forEach(function(c){g+='<line x1="'+m.l+'" x2="'+(W-m.r)+'" y1="'+y(c)+'" y2="'+y(c)+'" stroke="#32363b"/><text class="ax" x="'+(m.l-8)+'" y="'+(y(c)+4)+'" text-anchor="end">'+c+'</text>'});
+  g+='<text class="ax" x="'+(m.l-8)+'" y="'+(m.t-3)+'" text-anchor="end">°C</text>';
+  for(i=0;i<=12;i+=mob?4:2){g+='<line x1="'+x(i)+'" x2="'+x(i)+'" y1="'+(H-m.b)+'" y2="'+(H-m.b+5)+'" stroke="#a7a299"/><text class="ax" x="'+x(i)+'" y="'+(H-m.b+19)+'" text-anchor="middle">'+i+':00</text>'}
+  g+='<line x1="'+m.l+'" x2="'+(W-m.r)+'" y1="'+(H-m.b)+'" y2="'+(H-m.b)+'" stroke="#a7a299"/>';
+  function mark(t,c,name,anchor,ly){
+    if(mob)return '<line x1="'+x(t)+'" x2="'+x(t)+'" y1="'+y(c)+'" y2="'+(H-m.b)+'" stroke="#ff5533" stroke-dasharray="3 4" opacity=".7"/><circle cx="'+x(t)+'" cy="'+y(c)+'" r="6" fill="#15171a" stroke="#ff5533" stroke-width="3"/>';
+    var px=x(t),py=y(c);
+    var o='<line x1="'+px+'" x2="'+px+'" y1="'+py+'" y2="'+ly+'" stroke="#ff5533" stroke-dasharray="3 4" opacity=".7"/>';
+    o+='<circle cx="'+px+'" cy="'+py+'" r="6" fill="#15171a" stroke="#ff5533" stroke-width="3"/>';
+    var tx=anchor==='end'?px-8:(anchor==='start'?px+4:px);
+    o+='<text class="lab" x="'+tx+'" y="'+ly+'" text-anchor="'+anchor+'" font-weight="600">'+name+'</text>';
+    o+='<text class="val" x="'+tx+'" y="'+(ly+16)+'" text-anchor="'+anchor+'">'+mm(t)+', '+Math.round(c)+' °C</text>';
+    return o;
+  }
+  var mk=mark(P.a,P.b,'Поворотная точка',mob?'start':'middle',y(P.b)+22);
+  mk+=mark(P.c,P.d,'Первый крэк','end',y(mob?150:165));
+  mk+=mark(P.e,P.f,'Выгрузка','end',y(mob?122:142));
+  svg.innerHTML='<defs><clipPath id="cp"><rect x="0" y="0" width="'+(reveal*W)+'" height="'+H+'"/></clipPath></defs>'+g+
+    '<g clip-path="url(#cp)"><polyline points="'+pts.join(' ')+'" fill="none" stroke="#ff5533" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/>'+mk+'</g>';
+}
+var raf;
+function tween(to){
+  cancelAnimationFrame(raf);
+  if(reduce){P=to;draw();return}
+  var from=Object.assign({},P),t0=performance.now(),D=800;
+  (function step(now){
+    var k=Math.min(1,(now-t0)/D),e=1-Math.pow(1-k,3);
+    for(var q in to)P[q]=from[q]+(to[q]-from[q])*e;
+    draw();
+    if(k<1)raf=requestAnimationFrame(step);
+  })(t0);
+}
+function intro(){
+  if(reduce){reveal=1;draw();return}
+  reveal=0;var t0=performance.now();
+  (function step(now){
+    var k=Math.min(1,(now-t0)/900);reveal=1-Math.pow(1-k,3);draw();
+    if(k<1)requestAnimationFrame(step);
+  })(t0);
+}
+function readout(){
+  var l=LOTS[cur],dtr=Math.round((l.dr[0]-l.fc[0])/l.dr[0]*100);
+  $('nowName').textContent=l.n+' '+l.r+', '+l.roast+' обжарка';
+  $('legend').innerHTML=[['Поворотная точка',l.tp],['Первый крэк',l.fc],['Выгрузка',l.dr]].map(function(a){return '<li><i></i>'+a[0]+'<span>'+mm(a[1][0])+', '+a[1][1]+' °C</span></li>'}).join('');
+  $('nowDl').innerHTML='<dt>Поворотная точка</dt><dd>'+mm(l.tp[0])+', '+l.tp[1]+' °C</dd><dt>Первый крэк</dt><dd>'+mm(l.fc[0])+', '+l.fc[1]+' °C</dd><dt>Выгрузка</dt><dd>'+mm(l.dr[0])+', '+l.dr[1]+' °C</dd><dt>После крэка</dt><dd>'+dtr+'% времени обжарки</dd>';
+}
+function mark(i){
+  [].forEach.call($('lotsBody').rows,function(r,k){r.classList.toggle('on',k===i);r.querySelector('button').setAttribute('aria-pressed',String(k===i))});
+}
+function pick(i){cur=i;mark(i);readout();tween(pack(LOTS[i]))}
+
+$('lotsBody').innerHTML=LOTS.map(function(l){
+  return '<tr><td><button class="lotbtn" type="button" aria-pressed="false">'+l.n+'<small>'+l.r+'</small></button></td>'+
+  '<td data-l="Обработка">'+l.p+'</td><td data-l="Ноты">'+l.notes+'</td><td class="num" data-l="SCA">'+l.sca+'</td><td data-l="Обжарка">'+l.roast+'</td><td class="num price">'+T(l.price)+'</td></tr>';
+}).join('');
+[].forEach.call($('lotsBody').rows,function(r,i){r.addEventListener('click',function(){pick(i)})});
+mark(0);readout();
+if(window.ResizeObserver)new ResizeObserver(draw).observe(box);else addEventListener('resize',draw);
+draw();intro();
+
+/* подписка */
+var PR={esp:{250:5500,1000:19800},fil:{250:6800,1000:24500}};
+var sel=function(n){return document.querySelector('input[name='+n+']:checked').value};
+function calc(){
+  var m=sel('m'),v=sel('v'),f=+sel('f'),one=PR[m][v];
+  var what=(m==='esp'?'эспрессо':'фильтр')+', '+(v==='250'?'250 г':'1 кг');
+  $('sPrice').textContent=T(one);
+  $('sWhat').textContent=what+', раз в '+f+' нед.';
+  $('sLots').textContent=m==='esp'?'Колумбия, Гватемала, Бразилия':'Эфиопия, Кения';
+  $('sMonth').textContent=T(one*(4/f));
+  return 'Подписка: '+what+', раз в '+f+' нед. Одна доставка '+T(one)+', по Алматы бесплатно.';
+}
+$('subForm').addEventListener('change',calc);calc();
+
+/* заявка */
+var dlg=$('dlg'),ctx='';
+function open(text){
+  ctx=text;$('dForm').hidden=false;$('dDone').hidden=true;$('dForm').reset();
+  if(dlg.showModal)dlg.showModal();else dlg.setAttribute('open','');
+}
+document.querySelectorAll('[data-open]').forEach(function(b){b.addEventListener('click',function(){open(b.dataset.open)})});
+$('sBtn').addEventListener('click',function(){open(calc())});
+document.querySelectorAll('[data-close]').forEach(function(b){b.addEventListener('click',function(){dlg.close()})});
+dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close()});
+$('dForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  var d=new FormData(this);
+  $('waMsg').textContent='Новая заявка с сайта Ember\nИмя: '+d.get('name').trim()+'\nТелефон: '+d.get('tel').trim()+'\n'+ctx;
+  $('dForm').hidden=true;$('dDone').hidden=false;
+});
+})();
+</script>
+</body>
+</html>
